@@ -1,18 +1,20 @@
 import React from "react";
-import { useTheme } from "@material-ui/core/styles";
-import { Button } from "../components/button";
-import { Example } from "./example/example";
+import Detail from "../components/Detail";
+import Summary from "../components/Summary";
+import { useTheme } from "../libs/theme";
 
-const Home = () => {
+const Index = () => {
   const theme = useTheme();
-  const hello = "Hello";
   return (
-    <>
-      <div style={{ color: theme.palette.primary.main }}>{hello}</div>
-      <Button name="Click Me" color="primary" />
-      <Example />
-    </>
+    <div className="flex">
+      <div className={`w-2/3 ${theme.detail.bg}`}>
+        <Detail />
+      </div>
+      <div className={`w-1/3 ${theme.summary.bg}`}>
+        <Summary />
+      </div>
+    </div>
   );
 };
 
-export default Home;
+export default Index;
