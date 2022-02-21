@@ -4,4 +4,5 @@ export enum IconType {
   ADDRESS = "address",
   BIRTHDAY = "birthday",
   OBJECTIVE = "objective",
+  WORK_EXPERIENCE = "work-experience",
 }

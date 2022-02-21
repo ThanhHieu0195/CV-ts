@@ -1,11 +1,14 @@
+import { IUser } from "@/libs/models/User";
 import React from "react";
-import { useUser } from "../../libs/user";
 import Avt from "../Avt";
 import BasicInfo from "../BasicInfo";
 import MetaInfo from "../MetaInfo";
 
-const Summary = () => {
-  const { user } = useUser();
+type SummaryProps = {
+  user: IUser;
+};
+
+const Summary = ({ user }: SummaryProps) => {
   return (
     <div className="flex justify-center items-center flex-col">
       <Avt src={user?.avt} />

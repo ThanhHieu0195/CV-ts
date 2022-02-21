@@ -2,6 +2,8 @@ import React from "react";
 import { IconType } from "../../libs/constants";
 import { AiOutlineMail, AiOutlinePhone } from "react-icons/ai";
 import { FaAddressBook, FaBirthdayCake } from "react-icons/fa";
+import { GiMedallist, GiTargetShot } from "react-icons/gi";
+
 type IconProps = {
   type: IconType;
 };
@@ -17,7 +19,9 @@ const Icon = ({ type }: IconProps) => {
     case IconType.BIRTHDAY:
       return <FaBirthdayCake />;
     case IconType.OBJECTIVE:
-      return <FaBirthdayCake />;
+      return <GiTargetShot />;
+    case IconType.WORK_EXPERIENCE:
+      return <GiMedallist />;
     default:
       return <>EMPTY</>;
   }

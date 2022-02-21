@@ -1,18 +1,24 @@
-import React from "react";
-import Detail from "../components/Detail";
-import Summary from "../components/Summary";
-import { useTheme } from "../libs/theme";
+import React, { useEffect, useState } from "react";
+import api from "@/libs/api";
 
 const Index = () => {
-  const theme = useTheme();
+  const [menuItems, setMenuItems] = useState<string[]>([]);
+
+  useEffect(() => {
+    api.getUsers().then((rs) => setMenuItems(rs));
+  });
   return (
-    <div className="flex">
-      <div className={`w-2/3 ${theme.detail.bg}`}>
-        <Detail />
-      </div>
-      <div className={`w-1/3 ${theme.summary.bg}`}>
-        <Summary />
-      </div>
+    <div>
+      <span className="text-lg font-bold">Profile list</span>
+      <ul className="list-disc">
+        {menuItems.map((itemName, idx) => (
+          <li key={idx}>
+            <a href={"/profiles/" + itemName} className="text-base">
+              {idx + 1}. {itemName.toUpperCase().replaceAll("-", " ")}
+            </a>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

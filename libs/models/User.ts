@@ -1,4 +1,4 @@
-import { IconType } from "../constants";
+import { IconType } from "@/libs/constants";
 
 export interface IUser {
   name: string;
