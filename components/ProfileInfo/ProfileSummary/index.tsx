@@ -8,6 +8,7 @@ import MetaInfo, {
   FuncUpdateMetaInfo,
 } from "@/components/ProfileInfo/ProfileMetaInfo";
 import InputField from "@/components/InputField";
+import _ from "lodash";
 
 type ProfileSummaryProps = {
   user: IUser;
@@ -24,11 +25,19 @@ const ProfileSummary = ({
 }: ProfileSummaryProps) => {
   const handleUpdateBasicInfo: FuncUpdateBasicInfo =
     (idx: number) => (val: unknown) => {
+      if (_.isNil(idx)) {
+        onUpdateUserInfo(`basicInfos`)(val);
+        return;
+      }
       onUpdateUserInfo(`basicInfos.${idx}`)(val);
     };
 
   const handleUpdateMetaInfo: FuncUpdateMetaInfo =
     (idx) => (fieldName: string) => (val: string) => {
+      if (_.isNil(idx)) {
+        onUpdateUserInfo(`metaInfos`)(val);
+        return;
+      }
       onUpdateUserInfo(`metaInfos.${idx}.${fieldName}`)(val);
     };
 

@@ -73,9 +73,14 @@ const ProfileDetail = ({ user }) => {
   }, [user]);
 
   const handleUpdateUserInfo = (fieldName: string) => (value: string) => {
-    logger.info(`updating user-info ${fieldName} ${value}`);
     setData((currentResult: IUser) => {
-      _.set(currentResult, fieldName, value);
+      if (value) {
+        logger.info(`updating user-info ${fieldName} ${value}`);
+        _.set(currentResult, fieldName, value);
+      } else {
+        logger.info(`removing user-info ${fieldName}`);
+        _.remove(currentResult, fieldName);
+      }
       return { ...currentResult };
     });
   };

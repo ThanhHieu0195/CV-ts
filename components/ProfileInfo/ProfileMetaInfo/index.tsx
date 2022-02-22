@@ -2,16 +2,28 @@ import React from "react";
 import { useTheme } from "../../../libs/theme";
 import { IMetaInfo } from "../../../libs/models/User";
 import InputField from "@/components/InputField";
+import {
+  MdAdd,
+  MdAddCircleOutline,
+  MdRemoveCircleOutline,
+} from "react-icons/md";
+import { ShouldEditComponent } from "@/libs/CommonComponent";
 
 type ItemProps = {
   data: IMetaInfo;
-  onUpdateMetaInfo: (fieldName: string) => (val: string) => void;
+  onUpdateMetaInfo: (fieldName: string) => (val: string | unknown) => void;
   isEdit: boolean;
 };
 
 const Item = ({ data, onUpdateMetaInfo, isEdit }: ItemProps) => {
   const theme = useTheme();
-
+  const handleRemoveItem = (idx: number) => () => {
+    data.infos.splice(idx, 1);
+    onUpdateMetaInfo(`infos`)(data.infos);
+  };
+  const handleAddItem = () => {
+    onUpdateMetaInfo(`infos.${data.infos.length}`)("New item ...");
+  };
   return (
     <div className="flex flex-col">
       <div className="w-full flex items-center pb-2">
@@ -33,7 +45,7 @@ const Item = ({ data, onUpdateMetaInfo, isEdit }: ItemProps) => {
       <div className="px-10">
         <ul className="list-disc">
           {data.infos.map((text, idx) => (
-            <li className="pb-5 text-base" key={idx}>
+            <li key={idx} className="pb-5 text-base flex justify-center">
               <InputField
                 edit={isEdit}
                 value={text}
@@ -41,9 +53,27 @@ const Item = ({ data, onUpdateMetaInfo, isEdit }: ItemProps) => {
                   onUpdateMetaInfo(`infos.${idx}`)(value)
                 }
               />
+              {isEdit && (
+                <button
+                  className="ml-2 hover:text-red-800"
+                  onClick={handleRemoveItem(idx)}
+                >
+                  <MdRemoveCircleOutline />
+                </button>
+              )}
             </li>
           ))}
         </ul>
+        {isEdit && (
+          <div className="my-2">
+            <button
+              className="text-md py-1 px-2 hover:text-blue-800 hover:border-blue-800 border border-gray-600"
+              onClick={handleAddItem}
+            >
+              Add
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
@@ -51,7 +81,7 @@ const Item = ({ data, onUpdateMetaInfo, isEdit }: ItemProps) => {
 
 export type FuncUpdateMetaInfo = (
   idx: number
-) => (fieldName: string) => (val: string) => void;
+) => (fieldName: string | null) => (val: string | unknown) => void;
 
 type MetaInfoProps = {
   data: IMetaInfo[];
@@ -60,16 +90,46 @@ type MetaInfoProps = {
 };
 
 const MetaInfo = ({ data, isEdit, onUpdateMetaInfo }: MetaInfoProps) => {
+  const handleRemoveItem = (idx: number) => () => {
+    data.splice(idx, 1);
+    onUpdateMetaInfo(null)(null)(data);
+  };
+
+  const handleAddItem = () => {
+    data.push({
+      heading: "Heading",
+      infos: [],
+    });
+    onUpdateMetaInfo(null)(null)(data);
+  };
   return (
     <div className={`w-full p-5 `}>
       {data?.map((item, idx) => (
-        <Item
-          key={idx}
-          data={item}
-          isEdit={isEdit}
-          onUpdateMetaInfo={onUpdateMetaInfo(idx)}
-        />
+        <div key={idx} className="mb-2 flex justify-center items-center">
+          <ShouldEditComponent edit={isEdit}>
+            <button
+              className="absolute right-0 text-3xl ml-2 hover:text-red-500 hover:font-bold"
+              onClick={handleRemoveItem(idx)}
+            >
+              <MdRemoveCircleOutline />
+            </button>
+          </ShouldEditComponent>
+          <Item
+            data={item}
+            isEdit={isEdit}
+            onUpdateMetaInfo={onUpdateMetaInfo(idx)}
+          />
+        </div>
       ))}
+
+      <ShouldEditComponent edit={isEdit}>
+        <button
+          className="absolute right-0 text-3xl ml-2 hover:text-red-500 hover:font-bold"
+          onClick={handleAddItem}
+        >
+          <MdAddCircleOutline />
+        </button>
+      </ShouldEditComponent>
     </div>
   );
 };

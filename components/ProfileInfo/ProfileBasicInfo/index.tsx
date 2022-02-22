@@ -1,9 +1,9 @@
 import React from "react";
 import { IBasicInfo } from "../../../libs/models/User";
 import { IconType } from "../../../libs/constants";
-import Icon from "../../Icon";
 import { useTheme } from "../../../libs/theme";
 import InputField, { InputFieldType } from "../../InputField";
+import { MdRemoveCircleOutline } from "react-icons/md";
 
 type ItemProps = {
   text: string;
@@ -45,8 +45,8 @@ const Item = ({ text, icon, isEdit, onItemChange }: ItemProps) => {
 };
 
 export type FuncUpdateBasicInfo = (
-  idx: number
-) => (value: Record<string, string>) => void;
+  idx: number | null
+) => (value: Record<string, string> | unknown) => void;
 
 type BasicInfoProps = {
   data: IBasicInfo[];
@@ -60,21 +60,53 @@ const ProfileBasicInfo = ({
   onUpdateBasicInfo,
 }: BasicInfoProps) => {
   const theme = useTheme();
+
   const handleItemChange = (idx: number) => (value: Record<string, string>) => {
     onUpdateBasicInfo(idx)(value);
+  };
+
+  const handleAddMore = () => {
+    onUpdateBasicInfo(data.length)({
+      icon: IconType.ADDRESS,
+      text: "",
+    });
+  };
+
+  const handleRemoveItem = (idx: number) => () => {
+    data.splice(idx, 1);
+    onUpdateBasicInfo(null)(data);
   };
 
   return (
     <div className={`w-full p-5 ${theme.summary.basicInfo.bg}`}>
       {data?.map(({ text, icon }, idx) => (
-        <Item
-          key={idx}
-          text={text}
-          icon={icon}
-          isEdit={isEdit}
-          onItemChange={handleItemChange(idx)}
-        />
+        <div key={idx} className="flex">
+          <Item
+            text={text}
+            icon={icon}
+            isEdit={isEdit}
+            onItemChange={handleItemChange(idx)}
+          />
+          {isEdit && (
+            <button
+              className="ml-2 hover:text-red-800"
+              onClick={handleRemoveItem(idx)}
+            >
+              <MdRemoveCircleOutline />
+            </button>
+          )}
+        </div>
       ))}
+      {isEdit && (
+        <div className="mt-2">
+          <button
+            className="text-md py-1 px-2 hover:text-blue-800 hover:border-blue-800 border border-gray-600"
+            onClick={handleAddMore}
+          >
+            Add
+          </button>
+        </div>
+      )}
     </div>
   );
 };
