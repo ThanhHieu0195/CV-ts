@@ -1,57 +1,16 @@
 import React from "react";
 import { IDetail, IUser } from "@/libs/models/User";
 import { useTheme } from "@/libs/theme";
-import Icon from "@/components/Icon";
-
-enum InputFieldType {
-  TEXT_FIELD,
-  AREA,
-}
-
-type InputFieldProps = {
-  value: string;
-  edit: boolean;
-  type?: InputFieldType;
-  onDetailUpdate: (e) => void;
-};
-
-const InputField = ({
-  value,
-  onDetailUpdate,
-  edit,
-  type = InputFieldType.TEXT_FIELD,
-}: InputFieldProps) => {
-  return (
-    <div>
-      {edit && (
-        <>
-          {type === InputFieldType.TEXT_FIELD && (
-            <input
-              className="w-full p-2"
-              value={value}
-              onChange={onDetailUpdate}
-            />
-          )}
-
-          {type === InputFieldType.AREA && (
-            <textarea className="w-full p-2" rows={6} onChange={onDetailUpdate}>
-              {value}
-            </textarea>
-          )}
-        </>
-      )}
-      {!edit && <span>{value}</span>}
-    </div>
-  );
-};
+import InputField, { InputFieldType } from "../../InputField";
+import logger from "@/libs/logger";
 
 type ItemProps = {
   isEdit: boolean;
   data: IDetail;
-  onDetailUpdate: (fieldName: string) => (e) => void;
+  onItemUpdate: (fieldName: string) => (val: string) => void;
 };
 
-const Item = ({ data, isEdit, onDetailUpdate }: ItemProps) => {
+const Item = ({ data, isEdit, onItemUpdate }: ItemProps) => {
   const theme = useTheme();
 
   return (
@@ -63,14 +22,19 @@ const Item = ({ data, isEdit, onDetailUpdate }: ItemProps) => {
               "mr-2 text-xl rounded-full p-2 text-white " + theme.primary.bgIcon
             }
           >
-            <Icon type={data.icon} />
+            <InputField
+              type={InputFieldType.ICON_FIELD}
+              value={data.icon}
+              edit={isEdit}
+              onInputChange={onItemUpdate("icon")}
+            />
           </div>
         )}
         <div className={"text-xl font-bold " + theme.color2}>
           <InputField
             value={data.heading}
             edit={isEdit}
-            onDetailUpdate={onDetailUpdate("heading")}
+            onInputChange={onItemUpdate("heading")}
           />
         </div>
       </div>
@@ -80,8 +44,8 @@ const Item = ({ data, isEdit, onDetailUpdate }: ItemProps) => {
             <InputField
               value={data.description}
               edit={isEdit}
-              type={InputFieldType.AREA}
-              onDetailUpdate={onDetailUpdate("description")}
+              type={InputFieldType.AREA_FIELD}
+              onInputChange={onItemUpdate("description")}
             />
           </div>
         )}
@@ -91,7 +55,7 @@ const Item = ({ data, isEdit, onDetailUpdate }: ItemProps) => {
               <InputField
                 value={detail.heading}
                 edit={isEdit}
-                onDetailUpdate={onDetailUpdate(`detail.${idxDetail}.heading`)}
+                onInputChange={onItemUpdate(`detail.${idxDetail}.heading`)}
               />
             </div>
             <div className="pl-4">
@@ -102,7 +66,7 @@ const Item = ({ data, isEdit, onDetailUpdate }: ItemProps) => {
                       <InputField
                         value={subItem.subheading}
                         edit={isEdit}
-                        onDetailUpdate={onDetailUpdate(
+                        onInputChange={onItemUpdate(
                           `detail.${idxDetail}.data.${idxSubItem}.subheading`
                         )}
                       />
@@ -111,7 +75,7 @@ const Item = ({ data, isEdit, onDetailUpdate }: ItemProps) => {
                       <InputField
                         value={subItem.time}
                         edit={isEdit}
-                        onDetailUpdate={onDetailUpdate(
+                        onInputChange={onItemUpdate(
                           `detail.${idxDetail}.data.${idxSubItem}.time`
                         )}
                       />
@@ -127,7 +91,7 @@ const Item = ({ data, isEdit, onDetailUpdate }: ItemProps) => {
                           <InputField
                             value={text}
                             edit={isEdit}
-                            onDetailUpdate={onDetailUpdate(
+                            onInputChange={onItemUpdate(
                               `detail.${idxDetail}.data.${idxSubItem}.content.${idxSubItemContent}`
                             )}
                           />
@@ -147,14 +111,19 @@ const Item = ({ data, isEdit, onDetailUpdate }: ItemProps) => {
 
 type DetailProps = {
   isEdit?: boolean;
-  onUserInfoUpdate?: (fieldName: string) => (e) => void;
+  onUpdateUserInfo?: (fieldName: string) => (e) => void;
   user: IUser;
 };
 
-const Detail = ({ user, isEdit = false, onUserInfoUpdate }: DetailProps) => {
+const ProfileDetail = ({
+  user,
+  isEdit = false,
+  onUpdateUserInfo,
+}: DetailProps) => {
   const handleDetailUpdate =
-    (idx: number) => (fieldName: string) => (e: any) => {
-      onUserInfoUpdate(`detail.${idx}.${fieldName}`)(e);
+    (idx: number) => (fieldName: string) => (val: string) => {
+      logger.info(`updating profile-detail ${fieldName} ${val}`);
+      onUpdateUserInfo(`detail.${idx}.${fieldName}`)(val);
     };
   return (
     <div className="p-8">
@@ -163,11 +132,11 @@ const Detail = ({ user, isEdit = false, onUserInfoUpdate }: DetailProps) => {
           isEdit={isEdit}
           key={idx}
           data={detail}
-          onDetailUpdate={handleDetailUpdate(idx)}
+          onItemUpdate={handleDetailUpdate(idx)}
         />
       ))}
     </div>
   );
 };
 
-export default Detail;
+export default ProfileDetail;

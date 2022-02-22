@@ -4,26 +4,27 @@ import { AiOutlineMail, AiOutlinePhone } from "react-icons/ai";
 import { FaAddressBook, FaBirthdayCake } from "react-icons/fa";
 import { GiMedallist, GiTargetShot } from "react-icons/gi";
 
-type IconProps = {
+export type IconProps = {
   type: IconType;
+  onClick?: () => void;
 };
 
-const Icon = ({ type }: IconProps) => {
+const Icon = ({ type, onClick }: IconProps) => {
   switch (type) {
     case IconType.MAIL:
-      return <AiOutlineMail />;
+      return <AiOutlineMail onClick={onClick} />;
     case IconType.ADDRESS:
-      return <FaAddressBook />;
+      return <FaAddressBook onClick={onClick} />;
     case IconType.PHONE:
-      return <AiOutlinePhone />;
+      return <AiOutlinePhone onClick={onClick} />;
     case IconType.BIRTHDAY:
-      return <FaBirthdayCake />;
+      return <FaBirthdayCake onClick={onClick} />;
     case IconType.OBJECTIVE:
-      return <GiTargetShot />;
+      return <GiTargetShot onClick={onClick} />;
     case IconType.WORK_EXPERIENCE:
-      return <GiMedallist />;
+      return <GiMedallist onClick={onClick} />;
     default:
-      return <>EMPTY</>;
+      return <></>;
   }
 };
 

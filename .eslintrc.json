@@ -30,11 +30,9 @@
       "version": "detect"
     }
   },
-  "plugins": [
-    "react",
-    "@typescript-eslint"
-  ],
+  "plugins": ["react", "@typescript-eslint"],
   "rules": {
+    "no-unused-vars": "off",
     "prettier/prettier": "error",
     "jest/no-hooks": "off",
     "jest/prefer-expect-assertions": "off",
@@ -43,10 +41,7 @@
     "jest/expect-expect": [
       "warn",
       {
-        "assertFunctionNames": [
-          "expect",
-          "request.*.expect"
-        ]
+        "assertFunctionNames": ["expect", "request.*.expect"]
       }
     ],
     "jest/lowercase-name": "off",
@@ -54,9 +49,7 @@
     "camelcase": "warn",
     "no-case-declarations": "warn",
     "no-use-before-define": "off",
-    "@typescript-eslint/no-use-before-define": [
-      "error"
-    ],
+    "@typescript-eslint/no-use-before-define": ["error"],
     "@typescript-eslint/explicit-module-boundary-types": "off"
   }
 }

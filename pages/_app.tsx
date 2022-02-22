@@ -1,6 +1,5 @@
 import { AppProps } from "next/dist/next-server/lib/router/router";
 import React, { useEffect, useState } from "react";
-import Header from "@/components/Layouts/Header";
 import { getUser, UserContext } from "@/libs/context/UserContext";
 import { IUser } from "@/libs/models/User";
 import { useTheme } from "@/libs/theme";
@@ -23,12 +22,9 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <div className="w-full pt-2 pb-20 text-white bg-[#e3e3e3] flex items-center justify-center font-normal">
       <div
-        className={
-          theme.color + " rounded-2xl overflow-hidden drop-shadow-md w-[1024px]"
-        }
+        className={theme.color + " rounded-2xl overflow-hidden drop-shadow-md "}
       >
         <UserContext.Provider value={user}>
-          <Header user={user} />
           <Component {...pageProps} user={user} />
         </UserContext.Provider>
       </div>

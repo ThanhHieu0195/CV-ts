@@ -1,115 +1,112 @@
 import React, { useMemo, useState } from "react";
-import Detail from "@/components/Detail";
-import Summary from "@/components/Summary";
-import { useTheme } from "@/libs/theme";
 import _ from "lodash";
 import api from "@/libs/api";
-import { useRouter } from "next/router";
+import router, { useRouter } from "next/router";
+import ProfileInfo from "@/components/ProfileInfo";
+import useStep from "@/libs/useStep";
+import { FaArrowLeft, FaEdit, FaPrint, FaSave } from "react-icons/fa";
+import DefaultLayout from "@/components/Layouts/Default";
+import { IUser } from "@/libs/models/User";
+import logger from "@/libs/logger";
 
-enum FormStep {
-  PREVIEW,
-  EDIT,
-  PRINT,
-}
+type ProfileActionProps = {
+  isPreviewStep: boolean;
+  isEditStep: boolean;
+  nextStep: () => void;
+  onSubmitEditForm: () => void;
+};
+
+const ProfileAction = ({
+  isPreviewStep,
+  nextStep,
+  isEditStep,
+  onSubmitEditForm,
+}: ProfileActionProps) => {
+  const gotoPreviewPage = () => router.push(`${router.query.userId}/preview`);
+  return (
+    <div className="p-2">
+      {isPreviewStep && (
+        <>
+          <button
+            className="px-5 py-3 bg-blue-400 rounded-lg mr-2"
+            onClick={nextStep}
+          >
+            <FaEdit />
+          </button>
+
+          <button
+            className="px-5 py-3 bg-yellow-400 rounded-lg mr-2"
+            onClick={gotoPreviewPage}
+          >
+            <FaPrint />
+          </button>
+        </>
+      )}
+
+      {isEditStep && (
+        <>
+          <button
+            className="px-5 py-3 bg-blue-400 rounded-lg mr-2"
+            onClick={onSubmitEditForm}
+          >
+            <FaSave />
+          </button>
+          <button
+            className="px-5 py-3 bg-yellow-400 rounded-lg mr-2"
+            onClick={() => nextStep()}
+          >
+            <FaArrowLeft />
+          </button>
+        </>
+      )}
+    </div>
+  );
+};
 
 const ProfileDetail = ({ user }) => {
-  const theme = useTheme();
   const router = useRouter();
   const [data, setData] = useState(null);
-  const [formStep, setFormStep] = useState<FormStep>(FormStep.PREVIEW);
-  const [saving, setSaving] = useState(false);
+  const { isEditStep, isPreviewStep, nextStep } = useStep();
+
   useMemo(() => {
     setData(user);
   }, [user]);
 
-  const handleUserInfoUpdate = (fieldName: string) => (e) => {
-    setData((currentResult) => {
-      _.set(currentResult, fieldName, e.target.value);
+  const handleUpdateUserInfo = (fieldName: string) => (value: string) => {
+    logger.info(`updating user-info ${fieldName} ${value}`);
+    setData((currentResult: IUser) => {
+      _.set(currentResult, fieldName, value);
       return { ...currentResult };
     });
   };
 
-  const handleSaveUserInfo = () => {
-    setSaving(true);
-    api
+  const handleSubmitEditForm = async (): Promise<void> => {
+    return api
       .updateUser(router?.query?.userId as string, data)
       .then((rs) => {
-        setSaving(false);
-        setFormStep(FormStep.PREVIEW);
+        nextStep();
         return rs;
       })
       .catch((error) => {
-        setSaving(false);
-        console.error(error);
+        logger.error(error);
       });
   };
 
-  const handleResetUserInfo = () => {
-    console.info("reset user info", user);
-    setData((currentResult) => ({ ...currentResult, ...user }));
-  };
-
   return (
-    <div>
-      {!saving && (
-        <div className="relative">
-          {formStep !== FormStep.PRINT && (
-            <div className="fixed top-0 left-0 right-0 p-2">
-              {formStep === FormStep.PREVIEW && (
-                <>
-                  <button
-                    className="px-5 py-3 bg-blue-400 rounded-lg mr-2"
-                    onClick={() => setFormStep(FormStep.EDIT)}
-                  >
-                    Edit
-                  </button>
-                  <button
-                    className="px-5 py-3 bg-blue-400 rounded-lg mr-2"
-                    onClick={handleResetUserInfo}
-                  >
-                    Revert
-                  </button>
-                  <button
-                    className="px-5 py-3 bg-blue-400 rounded-lg mr-2"
-                    onClick={() => setFormStep(FormStep.PRINT)}
-                  >
-                    Print
-                  </button>
-                </>
-              )}
-
-              {formStep === FormStep.EDIT && (
-                <>
-                  <button
-                    className="px-5 py-3 bg-blue-400 rounded-lg mr-2"
-                    onClick={handleSaveUserInfo}
-                  >
-                    Update
-                  </button>
-                </>
-              )}
-            </div>
-          )}
-          <div className="flex">
-            <div className={`w-2/3 ${theme.detail.bg}`}>
-              <Detail
-                user={data}
-                isEdit={formStep === FormStep.EDIT}
-                onUserInfoUpdate={handleUserInfoUpdate}
-              />
-            </div>
-            <div className={`w-1/3 ${theme.summary.bg}`}>
-              <Summary user={data} />
-            </div>
-          </div>
-        </div>
-      )}
-
-      {saving && (
-        <div className="bg-gray-400 h-screen flex items-center justify-center">
-          Saving ...
-        </div>
-      )}
+    <div className="relative">
+      <ProfileAction
+        isEditStep={isEditStep}
+        isPreviewStep={isPreviewStep}
+        nextStep={nextStep}
+        onSubmitEditForm={handleSubmitEditForm}
+      />
+      <DefaultLayout>
+        <ProfileInfo
+          data={data}
+          isEditStep={isEditStep}
+          onUpdateUserInfo={handleUpdateUserInfo}
+        />
+      </DefaultLayout>
     </div>
   );
 };
