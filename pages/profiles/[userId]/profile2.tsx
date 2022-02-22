@@ -8,10 +8,7 @@ import { FaArrowLeft, FaEdit, FaPrint, FaSave } from "react-icons/fa";
 import DefaultLayout from "@/components/Layouts/Default";
 import { IUser } from "@/libs/models/User";
 import logger from "@/libs/logger";
-import {
-  ShouldEditComponent,
-  ShouldPreviewComponent,
-} from "@/libs/CommonComponent";
+import { ShouldEditComponent } from "@/libs/CommonComponent";
 
 type ProfileActionProps = {
   isPreviewStep: boolean;
@@ -29,7 +26,7 @@ const ProfileAction = ({
   const gotoPreviewPage = () => router.push(`${router.query.userId}/preview`);
   return (
     <div className="p-2">
-      <ShouldPreviewComponent preview={isPreviewStep}>
+      {isPreviewStep && (
         <>
           <button
             className="px-5 py-3 bg-blue-400 rounded-lg mr-2"
@@ -45,7 +42,7 @@ const ProfileAction = ({
             <FaPrint />
           </button>
         </>
-      </ShouldPreviewComponent>
+      )}
 
       <ShouldEditComponent edit={isEditStep}>
         <>

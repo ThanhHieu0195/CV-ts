@@ -9,3 +9,13 @@ export const ShouldEditComponent = ({
 }) => {
   return <>{edit && children}</>;
 };
+
+export const ShouldPreviewComponent = ({
+  preview,
+  children,
+}: {
+  preview: boolean;
+  children: React.ReactElement;
+}) => {
+  return <>{preview && children}</>;
+};
