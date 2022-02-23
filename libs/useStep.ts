@@ -1,21 +1,29 @@
-import { useState } from "react";
-
-export enum FormStep {
-  PREVIEW,
-  EDIT,
-}
+import { useRouter } from "next/router";
+import { AppStep, useAppStep } from "./context/AppContext";
 
 const useStep = () => {
-  const [step, setStep] = useState<FormStep>(FormStep.PREVIEW);
+  const { setStep, step } = useAppStep();
+  const isEditStep = Boolean(step === AppStep.EDIT);
+  const isPreviewStep = !isEditStep;
+  const router = useRouter();
+
   const nextStep = () => {
-    if (step === FormStep.PREVIEW) setStep(FormStep.EDIT);
-    else setStep(FormStep.PREVIEW);
+    if (isEditStep) {
+      setStep(AppStep.PREVIEW);
+    } else {
+      setStep(AppStep.EDIT);
+    }
+  };
+
+  const gotoPreviewPrintPage = () => {
+    return router.push(`/profiles/${router.query.userId}/preview`);
   };
   return {
     step,
     nextStep,
-    isPreviewStep: step === FormStep.PREVIEW,
-    isEditStep: step === FormStep.EDIT,
+    isPreviewStep,
+    isEditStep,
+    gotoPreviewPrintPage,
   };
 };
 

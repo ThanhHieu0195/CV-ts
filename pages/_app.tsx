@@ -5,6 +5,7 @@ import { IUser } from "@/libs/models/User";
 import { useTheme } from "@/libs/theme";
 import "@/styles/globals.css";
 import { useRouter } from "next/router";
+import { AppContext, AppStep } from "@/libs/context/AppContext";
 
 function App({ Component, pageProps }: AppProps) {
   const theme = useTheme();
@@ -19,14 +20,17 @@ function App({ Component, pageProps }: AppProps) {
       });
   }, [router, user]);
 
+  const [step, setStep] = useState<AppStep>(AppStep.PREVIEW);
   return (
     <div className="w-full pt-2 pb-20 text-white bg-[#e3e3e3] flex items-center justify-center font-normal">
       <div
         className={theme.color + " rounded-2xl overflow-hidden drop-shadow-md "}
       >
-        <UserContext.Provider value={user}>
-          <Component {...pageProps} user={user} />
-        </UserContext.Provider>
+        <AppContext.Provider value={{ step, setStep }}>
+          <UserContext.Provider value={user}>
+            <Component {...pageProps} user={user} />
+          </UserContext.Provider>
+        </AppContext.Provider>
       </div>
       <link
         rel="stylesheet"

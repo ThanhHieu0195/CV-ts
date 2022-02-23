@@ -9,20 +9,19 @@ import MetaInfo, {
 } from "@/components/ProfileInfo/ProfileMetaInfo";
 import InputField from "@/components/InputField";
 import _ from "lodash";
+import {
+  ShouldEditComponent,
+  ShouldPreviewComponent,
+} from "@/libs/CommonComponent";
 
 type ProfileSummaryProps = {
   user: IUser;
-  isEdit: boolean;
   onUpdateUserInfo: (
     fieldName: string
   ) => (value: string | Record<string, string> | unknown) => void;
 };
 
-const ProfileSummary = ({
-  user,
-  isEdit,
-  onUpdateUserInfo,
-}: ProfileSummaryProps) => {
+const ProfileSummary = ({ user, onUpdateUserInfo }: ProfileSummaryProps) => {
   const handleUpdateBasicInfo: FuncUpdateBasicInfo =
     (idx: number) => (val: unknown) => {
       if (_.isNil(idx)) {
@@ -47,22 +46,20 @@ const ProfileSummary = ({
 
   return (
     <div className="flex justify-center items-center flex-col">
-      {!isEdit && <Avt src={user?.avt} />}
-      {isEdit && (
-        <InputField
-          edit={true}
-          value={user?.avt}
-          onInputChange={handleUpdateAvt}
-        />
-      )}
+      <ShouldPreviewComponent>
+        <Avt src={user?.avt} />
+      </ShouldPreviewComponent>
+
+      <ShouldEditComponent>
+        <InputField value={user?.avt} onInputChange={handleUpdateAvt} />
+      </ShouldEditComponent>
+
       <ProfileBasicInfo
         data={user?.basicInfos}
-        isEdit={isEdit}
         onUpdateBasicInfo={handleUpdateBasicInfo}
       />
       <MetaInfo
         data={user?.metaInfos}
-        isEdit={isEdit}
         onUpdateMetaInfo={handleUpdateMetaInfo}
       />
     </div>

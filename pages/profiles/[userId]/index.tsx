@@ -1,76 +1,18 @@
 import React, { useMemo, useState } from "react";
 import _ from "lodash";
 import api from "@/libs/api";
-import router, { useRouter } from "next/router";
+import { useRouter } from "next/router";
 import ProfileInfo from "@/components/ProfileInfo";
 import useStep from "@/libs/useStep";
-import { FaArrowLeft, FaEdit, FaPrint, FaSave } from "react-icons/fa";
 import DefaultLayout from "@/components/Layouts/Default";
 import { IUser } from "@/libs/models/User";
 import logger from "@/libs/logger";
-import {
-  ShouldEditComponent,
-  ShouldPreviewComponent,
-} from "@/libs/CommonComponent";
-
-type ProfileActionProps = {
-  isPreviewStep: boolean;
-  isEditStep: boolean;
-  nextStep: () => void;
-  onSubmitEditForm: () => void;
-};
-
-const ProfileAction = ({
-  isPreviewStep,
-  nextStep,
-  isEditStep,
-  onSubmitEditForm,
-}: ProfileActionProps) => {
-  const gotoPreviewPage = () => router.push(`${router.query.userId}/preview`);
-  return (
-    <div className="p-2">
-      <ShouldPreviewComponent preview={isPreviewStep}>
-        <>
-          <button
-            className="px-5 py-3 bg-blue-400 rounded-lg mr-2"
-            onClick={nextStep}
-          >
-            <FaEdit />
-          </button>
-
-          <button
-            className="px-5 py-3 bg-yellow-400 rounded-lg mr-2"
-            onClick={gotoPreviewPage}
-          >
-            <FaPrint />
-          </button>
-        </>
-      </ShouldPreviewComponent>
-
-      <ShouldEditComponent edit={isEditStep}>
-        <>
-          <button
-            className="px-5 py-3 bg-blue-400 rounded-lg mr-2"
-            onClick={onSubmitEditForm}
-          >
-            <FaSave />
-          </button>
-          <button
-            className="px-5 py-3 bg-yellow-400 rounded-lg mr-2"
-            onClick={() => nextStep()}
-          >
-            <FaArrowLeft />
-          </button>
-        </>
-      </ShouldEditComponent>
-    </div>
-  );
-};
+import ProfileAction from "@/components/ProfileInfo/ProfileAction";
 
 const ProfileDetail = ({ user }) => {
   const router = useRouter();
   const [data, setData] = useState(null);
-  const { isEditStep, isPreviewStep, nextStep } = useStep();
+  const { nextStep } = useStep();
 
   useMemo(() => {
     setData(user);
@@ -103,18 +45,9 @@ const ProfileDetail = ({ user }) => {
 
   return (
     <div className="relative">
-      <ProfileAction
-        isEditStep={isEditStep}
-        isPreviewStep={isPreviewStep}
-        nextStep={nextStep}
-        onSubmitEditForm={handleSubmitEditForm}
-      />
+      <ProfileAction onSubmitEditForm={handleSubmitEditForm} />
       <DefaultLayout>
-        <ProfileInfo
-          data={data}
-          isEditStep={isEditStep}
-          onUpdateUserInfo={handleUpdateUserInfo}
-        />
+        <ProfileInfo data={data} onUpdateUserInfo={handleUpdateUserInfo} />
       </DefaultLayout>
     </div>
   );

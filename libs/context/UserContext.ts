@@ -9,9 +9,7 @@ export const getUser = (userId: string) => {
 };
 
 export const useUser = (): { user: IUser } => {
-  console.log("aaaaaaaaaaaaa");
   const data = useContext(UserContext);
-
   const [user, setUser] = useState(data);
   return { user };
 };

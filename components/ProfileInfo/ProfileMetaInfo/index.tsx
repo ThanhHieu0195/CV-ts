@@ -2,20 +2,15 @@ import React from "react";
 import { useTheme } from "../../../libs/theme";
 import { IMetaInfo } from "../../../libs/models/User";
 import InputField from "@/components/InputField";
-import {
-  MdAdd,
-  MdAddCircleOutline,
-  MdRemoveCircleOutline,
-} from "react-icons/md";
+import { MdAddCircleOutline, MdRemoveCircleOutline } from "react-icons/md";
 import { ShouldEditComponent } from "@/libs/CommonComponent";
 
 type ItemProps = {
   data: IMetaInfo;
   onUpdateMetaInfo: (fieldName: string) => (val: string | unknown) => void;
-  isEdit: boolean;
 };
 
-const Item = ({ data, onUpdateMetaInfo, isEdit }: ItemProps) => {
+const Item = ({ data, onUpdateMetaInfo }: ItemProps) => {
   const theme = useTheme();
   const handleRemoveItem = (idx: number) => () => {
     data.infos.splice(idx, 1);
@@ -31,7 +26,6 @@ const Item = ({ data, onUpdateMetaInfo, isEdit }: ItemProps) => {
           className={`text-lg font-bold ${theme.summary.MetaInfo.heading} pr-2`}
         >
           <InputField
-            edit={isEdit}
             value={data.heading}
             onInputChange={(value: string) =>
               onUpdateMetaInfo("heading")(value)
@@ -47,24 +41,23 @@ const Item = ({ data, onUpdateMetaInfo, isEdit }: ItemProps) => {
           {data.infos.map((text, idx) => (
             <li key={idx} className="pb-5 text-base flex justify-center">
               <InputField
-                edit={isEdit}
                 value={text}
                 onInputChange={(value: string) =>
                   onUpdateMetaInfo(`infos.${idx}`)(value)
                 }
               />
-              {isEdit && (
+              <ShouldEditComponent>
                 <button
                   className="ml-2 hover:text-red-800"
                   onClick={handleRemoveItem(idx)}
                 >
                   <MdRemoveCircleOutline />
                 </button>
-              )}
+              </ShouldEditComponent>
             </li>
           ))}
         </ul>
-        {isEdit && (
+        <ShouldEditComponent>
           <div className="my-2">
             <button
               className="text-md py-1 px-2 hover:text-blue-800 hover:border-blue-800 border border-gray-600"
@@ -73,7 +66,7 @@ const Item = ({ data, onUpdateMetaInfo, isEdit }: ItemProps) => {
               Add
             </button>
           </div>
-        )}
+        </ShouldEditComponent>
       </div>
     </div>
   );
@@ -85,11 +78,10 @@ export type FuncUpdateMetaInfo = (
 
 type MetaInfoProps = {
   data: IMetaInfo[];
-  isEdit: boolean;
   onUpdateMetaInfo: FuncUpdateMetaInfo;
 };
 
-const MetaInfo = ({ data, isEdit, onUpdateMetaInfo }: MetaInfoProps) => {
+const MetaInfo = ({ data, onUpdateMetaInfo }: MetaInfoProps) => {
   const handleRemoveItem = (idx: number) => () => {
     data.splice(idx, 1);
     onUpdateMetaInfo(null)(null)(data);
@@ -106,7 +98,7 @@ const MetaInfo = ({ data, isEdit, onUpdateMetaInfo }: MetaInfoProps) => {
     <div className={`w-full p-5 `}>
       {data?.map((item, idx) => (
         <div key={idx} className="mb-2 flex justify-center items-center">
-          <ShouldEditComponent edit={isEdit}>
+          <ShouldEditComponent>
             <button
               className="absolute right-0 text-3xl ml-2 hover:text-red-500 hover:font-bold"
               onClick={handleRemoveItem(idx)}
@@ -114,15 +106,11 @@ const MetaInfo = ({ data, isEdit, onUpdateMetaInfo }: MetaInfoProps) => {
               <MdRemoveCircleOutline />
             </button>
           </ShouldEditComponent>
-          <Item
-            data={item}
-            isEdit={isEdit}
-            onUpdateMetaInfo={onUpdateMetaInfo(idx)}
-          />
+          <Item data={item} onUpdateMetaInfo={onUpdateMetaInfo(idx)} />
         </div>
       ))}
 
-      <ShouldEditComponent edit={isEdit}>
+      <ShouldEditComponent>
         <button
           className="absolute right-0 text-3xl ml-2 hover:text-red-500 hover:font-bold"
           onClick={handleAddItem}

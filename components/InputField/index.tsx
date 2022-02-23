@@ -1,5 +1,9 @@
+import {
+  ShouldEditComponent,
+  ShouldPreviewComponent,
+} from "@/libs/CommonComponent";
 import { IconType } from "@/libs/constants";
-import React, { ChangeEvent, InputHTMLAttributes } from "react";
+import React from "react";
 import Icon from "../Icon";
 import IconList from "../Icon/IconList";
 
@@ -11,7 +15,6 @@ export enum InputFieldType {
 
 type InputFieldProps = {
   value: string | IconType;
-  edit: boolean;
   type?: InputFieldType;
   onInputChange: (value: string) => void;
 };
@@ -19,7 +22,6 @@ type InputFieldProps = {
 const InputField = ({
   value,
   onInputChange,
-  edit,
   type = InputFieldType.TEXT_FIELD,
 }: InputFieldProps) => {
   const handleFieldChange = (e) => onInputChange(e.target.value);
@@ -32,7 +34,7 @@ const InputField = ({
 
   return (
     <div>
-      {edit && (
+      <ShouldEditComponent>
         <>
           {isTextField && (
             <input
@@ -58,14 +60,14 @@ const InputField = ({
             />
           )}
         </>
-      )}
+      </ShouldEditComponent>
 
-      {!edit && (
+      <ShouldPreviewComponent>
         <div>
           {(isTextField || isAreaField) && <span>{value}</span>}
           {isIconField && <Icon type={value as IconType} />}
         </div>
-      )}
+      </ShouldPreviewComponent>
     </div>
   );
 };

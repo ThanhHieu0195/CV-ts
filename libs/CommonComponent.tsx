@@ -1,21 +1,21 @@
 import React from "react";
+import useStep from "./useStep";
 
 export const ShouldEditComponent = ({
-  edit,
   children,
 }: {
-  edit: boolean;
   children: React.ReactElement;
 }) => {
-  return <>{edit && children}</>;
+  const { isEditStep } = useStep();
+  return <>{isEditStep && children}</>;
 };
 
 export const ShouldPreviewComponent = ({
-  preview,
   children,
 }: {
-  preview: boolean;
   children: React.ReactElement;
 }) => {
-  return <>{preview && children}</>;
+  const { isPreviewStep } = useStep();
+
+  return <>{isPreviewStep && children}</>;
 };

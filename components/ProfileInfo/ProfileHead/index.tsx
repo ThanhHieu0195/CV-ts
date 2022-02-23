@@ -4,13 +4,11 @@ import React from "react";
 import { useTheme } from "../../../libs/theme";
 type HeaderProps = {
   user: IUser;
-  isEdit: boolean;
   onUpdateUserInfo?: (fieldName: string) => (value: string) => void;
 };
 
 const ProfileHead: React.VFC<HeaderProps> = ({
   user,
-  isEdit,
   onUpdateUserInfo,
 }: HeaderProps) => {
   const theme = useTheme();
@@ -21,7 +19,6 @@ const ProfileHead: React.VFC<HeaderProps> = ({
           <h1 className={"text-3xl font-bold " + theme.color}>
             <InputField
               value={user.name}
-              edit={isEdit}
               onInputChange={onUpdateUserInfo("name")}
             />
           </h1>
@@ -30,7 +27,6 @@ const ProfileHead: React.VFC<HeaderProps> = ({
               {
                 <InputField
                   value={user.position}
-                  edit={isEdit}
                   onInputChange={onUpdateUserInfo("position")}
                 />
               }

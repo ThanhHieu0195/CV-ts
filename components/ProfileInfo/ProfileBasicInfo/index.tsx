@@ -4,15 +4,15 @@ import { IconType } from "../../../libs/constants";
 import { useTheme } from "../../../libs/theme";
 import InputField, { InputFieldType } from "../../InputField";
 import { MdRemoveCircleOutline } from "react-icons/md";
+import { ShouldEditComponent } from "@/libs/CommonComponent";
 
 type ItemProps = {
   text: string;
   icon: IconType;
   onItemChange: (value) => void;
-  isEdit: boolean;
 };
 
-const Item = ({ text, icon, isEdit, onItemChange }: ItemProps) => {
+const Item = ({ text, icon, onItemChange }: ItemProps) => {
   const theme = useTheme();
   const handleTextChange = (val: string) => {
     onItemChange({ icon, text: val });
@@ -29,16 +29,11 @@ const Item = ({ text, icon, isEdit, onItemChange }: ItemProps) => {
         <InputField
           type={InputFieldType.ICON_FIELD}
           value={icon}
-          edit={isEdit}
           onInputChange={handleIconChange}
         />
       </div>
       <span className="text-base">
-        <InputField
-          edit={isEdit}
-          value={text}
-          onInputChange={handleTextChange}
-        />
+        <InputField value={text} onInputChange={handleTextChange} />
       </span>
     </div>
   );
@@ -50,15 +45,10 @@ export type FuncUpdateBasicInfo = (
 
 type BasicInfoProps = {
   data: IBasicInfo[];
-  isEdit: boolean;
   onUpdateBasicInfo: FuncUpdateBasicInfo;
 };
 
-const ProfileBasicInfo = ({
-  data,
-  isEdit,
-  onUpdateBasicInfo,
-}: BasicInfoProps) => {
+const ProfileBasicInfo = ({ data, onUpdateBasicInfo }: BasicInfoProps) => {
   const theme = useTheme();
 
   const handleItemChange = (idx: number) => (value: Record<string, string>) => {
@@ -81,23 +71,18 @@ const ProfileBasicInfo = ({
     <div className={`w-full p-5 ${theme.summary.basicInfo.bg}`}>
       {data?.map(({ text, icon }, idx) => (
         <div key={idx} className="flex">
-          <Item
-            text={text}
-            icon={icon}
-            isEdit={isEdit}
-            onItemChange={handleItemChange(idx)}
-          />
-          {isEdit && (
+          <Item text={text} icon={icon} onItemChange={handleItemChange(idx)} />
+          <ShouldEditComponent>
             <button
               className="ml-2 hover:text-red-800"
               onClick={handleRemoveItem(idx)}
             >
               <MdRemoveCircleOutline />
             </button>
-          )}
+          </ShouldEditComponent>
         </div>
       ))}
-      {isEdit && (
+      <ShouldEditComponent>
         <div className="mt-2">
           <button
             className="text-md py-1 px-2 hover:text-blue-800 hover:border-blue-800 border border-gray-600"
@@ -106,7 +91,7 @@ const ProfileBasicInfo = ({
             Add
           </button>
         </div>
-      )}
+      </ShouldEditComponent>
     </div>
   );
 };
