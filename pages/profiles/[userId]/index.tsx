@@ -25,7 +25,7 @@ const ProfileDetail = ({ user }) => {
         _.set(currentResult, fieldName, value);
       } else {
         logger.info(`removing user-info ${fieldName}`);
-        _.remove(currentResult, fieldName);
+        // _.remove(currentResult, fieldName);
       }
       return { ...currentResult };
     });
