@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "PORT=80 next start",
     "test": "npx jest",
     "lint": "eslint --fix ./pages/*.{js,tsx} ./pages/*/*.tsx ./components/*/*.tsx ./components/*/*/*.tsx"
   },
