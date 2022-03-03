@@ -16,7 +16,7 @@ export enum InputFieldType {
 type InputFieldProps = {
   value: string | IconType;
   type?: InputFieldType;
-  onInputChange: (value: string) => void;
+  onInputChange?: (value: string) => void;
 };
 
 const InputField = ({

@@ -16,7 +16,7 @@ import {
 
 type ProfileSummaryProps = {
   user: IUser;
-  onUpdateUserInfo: (
+  onUpdateUserInfo?: (
     fieldName: string
   ) => (value: string | Record<string, string> | unknown) => void;
 };

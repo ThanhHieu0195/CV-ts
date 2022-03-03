@@ -7,15 +7,15 @@ import logger from "@/libs/logger";
 type ItemProps = {
   isEdit: boolean;
   data: IDetail;
-  onItemUpdate: (fieldName: string) => (val: string) => void;
+  onItemUpdate: (fieldName: string) => (val) => void;
 };
 
-const Item = ({ data, isEdit, onItemUpdate }: ItemProps) => {
+const Item = ({ data, onItemUpdate }: ItemProps) => {
   const theme = useTheme();
 
   return (
     <div className="pb-10">
-      <div className="flex items-center pb-2">
+      <div className="flex items-center">
         {data.icon && (
           <div
             className={
@@ -25,25 +25,24 @@ const Item = ({ data, isEdit, onItemUpdate }: ItemProps) => {
             <InputField
               type={InputFieldType.ICON_FIELD}
               value={data.icon}
-              edit={isEdit}
               onInputChange={onItemUpdate("icon")}
             />
           </div>
         )}
-        <div className={"text-xl font-bold " + theme.color2}>
-          <InputField
-            value={data.heading}
-            edit={isEdit}
-            onInputChange={onItemUpdate("heading")}
-          />
-        </div>
+        {data.heading && (
+          <div className={"text-xl font-bold " + theme.color2}>
+            <InputField
+              value={data.heading}
+              onInputChange={onItemUpdate("heading")}
+            />
+          </div>
+        )}
       </div>
       <div className="pl-4">
         {data.description && (
           <div className="text-base">
             <InputField
               value={data.description}
-              edit={isEdit}
               type={InputFieldType.AREA_FIELD}
               onInputChange={onItemUpdate("description")}
             />
@@ -54,7 +53,6 @@ const Item = ({ data, isEdit, onItemUpdate }: ItemProps) => {
             <div className="text-lg font-bold pb-2">
               <InputField
                 value={detail.heading}
-                edit={isEdit}
                 onInputChange={onItemUpdate(`detail.${idxDetail}.heading`)}
               />
             </div>
@@ -65,7 +63,6 @@ const Item = ({ data, isEdit, onItemUpdate }: ItemProps) => {
                     <div className="text-md font-bold">
                       <InputField
                         value={subItem.subheading}
-                        edit={isEdit}
                         onInputChange={onItemUpdate(
                           `detail.${idxDetail}.data.${idxSubItem}.subheading`
                         )}
@@ -74,7 +71,6 @@ const Item = ({ data, isEdit, onItemUpdate }: ItemProps) => {
                     <div className="text-sm">
                       <InputField
                         value={subItem.time}
-                        edit={isEdit}
                         onInputChange={onItemUpdate(
                           `detail.${idxDetail}.data.${idxSubItem}.time`
                         )}
@@ -90,7 +86,6 @@ const Item = ({ data, isEdit, onItemUpdate }: ItemProps) => {
                         >
                           <InputField
                             value={text}
-                            edit={isEdit}
                             onInputChange={onItemUpdate(
                               `detail.${idxDetail}.data.${idxSubItem}.content.${idxSubItemContent}`
                             )}
@@ -104,6 +99,17 @@ const Item = ({ data, isEdit, onItemUpdate }: ItemProps) => {
             </div>
           </div>
         ))}
+        <button
+          onClick={() => {
+            onItemUpdate(`detail.${data.detail.length}`)({
+              subheading: "Heading ...",
+              time: "time",
+              data: [],
+            });
+          }}
+        >
+          Add
+        </button>
       </div>
     </div>
   );
@@ -120,13 +126,12 @@ const ProfileDetail = ({
   isEdit = false,
   onUpdateUserInfo,
 }: DetailProps) => {
-  const handleDetailUpdate =
-    (idx: number) => (fieldName: string) => (val: string) => {
-      logger.info(`updating profile-detail ${fieldName} ${val}`);
-      onUpdateUserInfo(`detail.${idx}.${fieldName}`)(val);
-    };
+  const handleDetailUpdate = (idx: number) => (fieldName: string) => (val) => {
+    logger.info(`updating profile-detail ${fieldName} ${val}`);
+    onUpdateUserInfo(`detail.${idx}.${fieldName}`)(val);
+  };
   return (
-    <div className="p-8">
+    <div className="pt-8 px-8">
       {user?.detail?.map((detail, idx) => (
         <Item
           isEdit={isEdit}

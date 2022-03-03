@@ -1,10 +1,10 @@
 export const useTheme = () => {
   return {
     color: "text-black",
-    color2: "text-[#91C190]",
+    color2: "text-green-600",
     primary: {
-      bg: "bg-[#d7e4d8]",
-      bgIcon: "bg-[#91C190]",
+      bg: "bg-green-200",
+      bgIcon: "bg-green-600",
     },
     detail: {
       bg: "bg-white",
@@ -14,7 +14,7 @@ export const useTheme = () => {
       basicInfo: {
         bg: "bg-[#d7e4d8]",
         icon: {
-          bg: "bg-[#91C190]",
+          bg: "bg-green-600",
           border: "border-2 border-white",
         },
       },

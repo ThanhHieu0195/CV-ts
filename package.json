@@ -10,6 +10,7 @@
     "lint": "eslint --fix ./pages/*.{js,tsx} ./pages/*/*.tsx ./components/*/*.tsx ./components/*/*/*.tsx"
   },
   "dependencies": {
+    "html-pdf-node": "^1.0.8",
     "lodash": "^4.17.21",
     "next": "^10.1.3",
     "react": "^17.0.2",

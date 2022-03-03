@@ -36,10 +36,10 @@ const Item = ({ data, onUpdateMetaInfo }: ItemProps) => {
           className={`w-full h-[1px] ${theme.summary.MetaInfo.line.bg}`}
         ></span>
       </div>
-      <div className="px-10">
-        <ul className="list-disc">
+      <div className="px-5">
+        <ul className="list-dict">
           {data.infos.map((text, idx) => (
-            <li key={idx} className="pb-5 text-base flex justify-center">
+            <li key={idx} className="pb-5 text-base">
               <InputField
                 value={text}
                 onInputChange={(value: string) =>
@@ -97,7 +97,7 @@ const MetaInfo = ({ data, onUpdateMetaInfo }: MetaInfoProps) => {
   return (
     <div className={`w-full p-5 `}>
       {data?.map((item, idx) => (
-        <div key={idx} className="mb-2 flex justify-center items-center">
+        <div key={idx} className="mb-2 flex items-center">
           <ShouldEditComponent>
             <button
               className="absolute right-0 text-3xl ml-2 hover:text-red-500 hover:font-bold"

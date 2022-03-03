@@ -6,7 +6,7 @@ import {
 import useStep from "@/libs/useStep";
 import { FaArrowLeft, FaEdit, FaPrint, FaSave } from "react-icons/fa";
 type ProfileActionProps = {
-  onSubmitEditForm: () => void;
+  onSubmitEditForm?: () => void;
 };
 
 const ProfileAction = ({ onSubmitEditForm }: ProfileActionProps) => {

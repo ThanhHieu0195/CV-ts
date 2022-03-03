@@ -2,11 +2,3 @@
 @tailwind components;
 @tailwind utilities;
 
-
-.block-menu-content {
-    max-height: 0px;
-    overflow: hidden;
-}
-input:checked + .block-menu-content {
-    max-height: 300px;
-}
