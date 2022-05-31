@@ -8,21 +8,20 @@ import ProfileDetail2 from "./ProfileDetail2";
 
 type ProfileProps = {
   data: IUser;
-  onUpdateUserInfo?: (fileName: string) => (value: string) => void;
 };
 
-const ProfileInfo = ({ data, onUpdateUserInfo }: ProfileProps) => {
+const ProfileInfo = ({ data }: ProfileProps) => {
   const theme = useTheme();
   return (
     <div className="mt-10">
-      <ProfileHead user={data} onUpdateUserInfo={onUpdateUserInfo} />
+      <ProfileHead user={data} />
       <div className="flex">
         <div className={`w-2/3 ${theme.detail.bg}`}>
-          <ProfileDetail user={data} onUpdateUserInfo={onUpdateUserInfo} />
+          <ProfileDetail user={data} />
           <ProfileDetail2 />
         </div>
         <div className={`w-1/3 ${theme.summary.bg}`}>
-          <ProfileSummary user={data} onUpdateUserInfo={onUpdateUserInfo} />
+          <ProfileSummary user={data} />
         </div>
       </div>
     </div>

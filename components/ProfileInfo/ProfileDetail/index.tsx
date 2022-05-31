@@ -7,10 +7,9 @@ import logger from "@/libs/logger";
 type ItemProps = {
   isEdit: boolean;
   data: IDetail;
-  onItemUpdate: (fieldName: string) => (val) => void;
 };
 
-const Item = ({ data, onItemUpdate }: ItemProps) => {
+const Item = ({ data }: ItemProps) => {
   const theme = useTheme();
 
   return (
@@ -22,19 +21,12 @@ const Item = ({ data, onItemUpdate }: ItemProps) => {
               "mr-2 text-xl rounded-full p-2 text-white " + theme.primary.bgIcon
             }
           >
-            <InputField
-              type={InputFieldType.ICON_FIELD}
-              value={data.icon}
-              onInputChange={onItemUpdate("icon")}
-            />
+            <InputField type={InputFieldType.ICON_FIELD} value={data.icon} />
           </div>
         )}
         {data.heading && (
           <div className={"text-xl font-bold " + theme.color2}>
-            <InputField
-              value={data.heading}
-              onInputChange={onItemUpdate("heading")}
-            />
+            <InputField value={data.heading} />
           </div>
         )}
       </div>
@@ -44,37 +36,23 @@ const Item = ({ data, onItemUpdate }: ItemProps) => {
             <InputField
               value={data.description}
               type={InputFieldType.AREA_FIELD}
-              onInputChange={onItemUpdate("description")}
             />
           </div>
         )}
         {data.detail?.map((detail, idxDetail) => (
           <div key={idxDetail}>
             <div className="text-lg font-bold pb-2">
-              <InputField
-                value={detail.heading}
-                onInputChange={onItemUpdate(`detail.${idxDetail}.heading`)}
-              />
+              <InputField value={detail.heading} />
             </div>
             <div className="pl-4">
               {detail?.data.map((subItem, idxSubItem) => (
                 <div key={idxSubItem} className="pb-4">
                   <div className="flex items-center justify-between">
                     <div className="text-md font-bold">
-                      <InputField
-                        value={subItem.subheading}
-                        onInputChange={onItemUpdate(
-                          `detail.${idxDetail}.data.${idxSubItem}.subheading`
-                        )}
-                      />
+                      <InputField value={subItem.subheading} />
                     </div>
                     <div className="text-sm">
-                      <InputField
-                        value={subItem.time}
-                        onInputChange={onItemUpdate(
-                          `detail.${idxDetail}.data.${idxSubItem}.time`
-                        )}
-                      />
+                      <InputField value={subItem.time} />
                     </div>
                   </div>
                   <div className="pl-4 w-4/5">
@@ -84,12 +62,7 @@ const Item = ({ data, onItemUpdate }: ItemProps) => {
                           key={idxSubItemContent}
                           className="px-2 py-1 text-base"
                         >
-                          <InputField
-                            value={text}
-                            onInputChange={onItemUpdate(
-                              `detail.${idxDetail}.data.${idxSubItem}.content.${idxSubItemContent}`
-                            )}
-                          />
+                          <InputField value={text} />
                         </li>
                       ))}
                     </ul>
@@ -99,17 +72,6 @@ const Item = ({ data, onItemUpdate }: ItemProps) => {
             </div>
           </div>
         ))}
-        <button
-          onClick={() => {
-            onItemUpdate(`detail.${data.detail.length}`)({
-              subheading: "Heading ...",
-              time: "time",
-              data: [],
-            });
-          }}
-        >
-          Add
-        </button>
       </div>
     </div>
   );
@@ -117,28 +79,14 @@ const Item = ({ data, onItemUpdate }: ItemProps) => {
 
 type DetailProps = {
   isEdit?: boolean;
-  onUpdateUserInfo?: (fieldName: string) => (e) => void;
   user: IUser;
 };
 
-const ProfileDetail = ({
-  user,
-  isEdit = false,
-  onUpdateUserInfo,
-}: DetailProps) => {
-  const handleDetailUpdate = (idx: number) => (fieldName: string) => (val) => {
-    logger.info(`updating profile-detail ${fieldName} ${val}`);
-    onUpdateUserInfo(`detail.${idx}.${fieldName}`)(val);
-  };
+const ProfileDetail = ({ user, isEdit = false }: DetailProps) => {
   return (
     <div className="pt-8 px-8">
       {user?.detail?.map((detail, idx) => (
-        <Item
-          isEdit={isEdit}
-          key={idx}
-          data={detail}
-          onItemUpdate={handleDetailUpdate(idx)}
-        />
+        <Item isEdit={isEdit} key={idx} data={detail} />
       ))}
     </div>
   );
