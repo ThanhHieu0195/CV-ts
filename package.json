@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:html": "next build && next export",
     "start": "next start -p $PORT",
     "test": "npx jest",
     "lint": "eslint --fix ./pages/*.{js,tsx} ./pages/*/*.tsx ./components/*/*.tsx ./components/*/*/*.tsx"
