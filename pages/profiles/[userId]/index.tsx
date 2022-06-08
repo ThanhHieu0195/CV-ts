@@ -1,21 +1,12 @@
-import React, { useMemo, useState } from "react";
-import ProfileInfo from "@/components/ProfileInfo";
-import DefaultLayout from "@/components/Layouts/Default";
+import React from "react";
+import Profile from "@/components/Profile";
 
-const ProfileDetail = ({ user }) => {
-  const [data, setData] = useState(null);
-
-  useMemo(() => {
-    setData(user);
-  }, [user]);
-
+const ProfileIndex = ({ user }) => {
   return (
     <div className="relative">
-      <DefaultLayout>
-        <ProfileInfo data={data} />
-      </DefaultLayout>
+      {user?.version === "1" && <Profile user={user} />}
     </div>
   );
 };
 
-export default ProfileDetail;
+export default ProfileIndex;

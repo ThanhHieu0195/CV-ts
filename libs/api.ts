@@ -1,24 +1,13 @@
 import { IUser } from "@/libs/models/User";
 class Api {
-  url: string;
-  constructor(url) {
-    this.url = url;
-  }
-
+  constructor() {}
   async getUser(userId: string): Promise<IUser> {
-    return fetch(`${this.url}/users/${userId}`).then((r) => r.json());
-  }
-
-  async updateUser(userId: string, data: IUser): Promise<void> {
-    return fetch(`${this.url}/users/${userId}`, {
-      method: "post",
-      body: JSON.stringify(data),
-    }).then((r) => r.json());
+    return fetch(`/data/${userId}.json`).then((r) => r.json());
   }
 
   async getUsers(): Promise<string[]> {
-    return fetch(`${this.url}/users/`).then((r) => r.json());
+    return fetch(`/data/list.json`).then((r) => r.json());
   }
 }
 
-export default new Api(process.env.NEXT_PUBLIC_API);
+export default new Api();

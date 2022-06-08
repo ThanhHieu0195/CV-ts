@@ -1,0 +1,374 @@
+{
+  "name": "Trần Cao Thanh Hiếu",
+  "version": "1",
+  "position": "Fullstack Developer",
+  "avt": "https://scontent.fsgn5-8.fna.fbcdn.net/v/t1.6435-9/82207909_1663744087095678_7014199790762196992_n.jpg?_nc_cat=109&ccb=1-5&_nc_sid=174925&_nc_ohc=8E2CWPkZFDsAX92qOxJ&_nc_oc=AQkIq-jtK6X32F38ajDcJVJA5A5NEhn6cSBHa9Atdpd-qZv4ARJa6WODte3Mvo_nPI4zzeFwrtlfpwJOSJ9ejbuz&_nc_ht=scontent.fsgn5-8.fna&oh=00_AT_5TetXRRr0mMzKL-y2dnHAtGZzjqu2qUYIzkqWcwd9CA&oe=6245F829",
+  "basicInfos": [
+    { "icon": "mail", "text": "thanhhieu0195@gmail.com" },
+    { "icon": "phone", "text": "0928.092.553" },
+    {
+      "text": "Huynh Tan Phat Street, District 7, Ho Chi Minh City",
+      "icon": "address"
+    }
+  ],
+  "metaInfos": [
+    {
+      "heading": "SKILLS",
+      "infos": [
+        "NextJs, ReactJS",
+        "FeathersJs, ExpressJs",
+        "Spring Boot",
+        "Python, Flask, Django",
+        "Wordpress, Yii, Laravel",
+        "Flutter, Ruby",
+        "MySql, Mongodb, PostgreSql",
+        "Redis, ElasticSearch",
+        "Git, SVN, Apache2, Nginx, Ubuntu",
+        "Docker, SSH, BASH script",
+        "Digital Ocean, AWS, Sendgrid, Twilio, Firebase",
+        "Cognito, DynamoDB, EC2, Route 53, Lambda",
+        "Bunny, cloudflare, CloudFront",
+        "Gulp, Webpack, CICD"
+      ]
+    },
+    {
+      "heading": "INTERESTS",
+      "infos": [
+        "Read News",
+        "Learn Technology",
+        "Listen Music",
+        "Listen To Share Experience",
+        "Watch Anime",
+        "Like travel"
+      ]
+    }
+  ],
+  "detail": [
+    {
+      "heading": "OBJECTIVE",
+      "description": "I am looking for a position as a software developer in the organization where I can utilize\nmy skills at understanding and build software and the opportunity to upgrade my\nknowledge about the new and emerging trends in the sector",
+      "icon": "objective"
+    }
+  ],
+  "experience": {
+    "icon": "work-experience",
+    "heading": "WORK EXPERIENCE",
+    "data": [
+      {
+        "subheading": "Shift Asia",
+        "time": "03/2021 - 03/2022",
+        "projects": [
+          {
+            "name": "Education",
+            "metas": [
+              {
+                "title": "Job description",
+                "value": "Provides authentication module to support registration, login, update information between different platforms."
+              },
+              {
+                "title": "Platform",
+                "display": "string",
+                "value": [
+                  "Spring Boot",
+                  " Gradle",
+                  " Cognito",
+                  " DynamoDB",
+                  " Redis",
+                  " Postgres",
+                  " Gulp",
+                  " Pug"
+                ]
+              },
+              {
+                "title": "Position",
+                "value": "Fullstack"
+              },
+              {
+                "title": null,
+                "display": "link",
+                "value": ["https://www.ei-navi.jp"]
+              }
+            ]
+          },
+          {
+            "name": "Internal Banking System",
+            "metas": [
+              {
+                "title": "Job description",
+                "value": "This is the internal system of a banking system consisting of two parts, admin and user, supporting user management, campaigns, statistics,..."
+              },
+              {
+                "title": "Platform",
+                "display": "string",
+                "value": [
+                  "NextJs/Mui",
+                  "Redis",
+                  " Mysql",
+                  "Spring Boot",
+                  "Multiple workspace"
+                ]
+              },
+              {
+                "title": "Position",
+                "value": "Fullstack"
+              }
+            ]
+          },
+          {
+            "name": "Insurance System",
+            "metas": [
+              {
+                "title": "Job description",
+                "value": "This is a contract management system, insurance, ... Supports the following interaction between users and admin ..."
+              },
+              {
+                "title": "Platform",
+                "display": "string",
+                "value": [
+                  "NextJs/Mui",
+                  "SpringBoot",
+                  "Cognito",
+                  "Postgres",
+                  "Micro Services",
+                  "AWS Workspace"
+                ]
+              },
+              {
+                "title": "Position",
+                "value": "Fullstack"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "subheading": "Espx Media",
+        "time": "10/2019 - 03/2021",
+        "projects": [
+          {
+            "name": "ESPx cloud",
+            "metas": [
+              {
+                "title": "Job description",
+                "value": "Provide a live-stream platform that supports B2B and B2C systems with the following features:\n                    - Content management (category, event, movie, stream) \n                    - Actionable with viewers (live chat, q&a, survey, dialog\n                    - Special campaigns (authenticate, ticket, pass-code)\n                    - Statistics, reports\n                    "
+              },
+              {
+                "title": "Platform",
+                "display": "string",
+                "value": [
+                  "FeathersJs (Nodejs)",
+                  " NextJs",
+                  " Angular",
+                  " Redis",
+                  " Postgres",
+                  " MongoDb",
+                  " SocketIO",
+                  " AWS",
+                  " DO",
+                  " Bunny / CloudFlare / CloudFront",
+                  " Firebase",
+                  " Twilio"
+                ]
+              },
+              {
+                "title": "Position",
+                "value": "Technical Lead"
+              },
+              {
+                "title": "Partner",
+                "display": "string",
+                "value": [
+                  "Mplay Asia",
+                  "National Library Board",
+                  "gradian",
+                  "National Gallary Singapore"
+                ]
+              },
+              {
+                "title": "Link",
+                "display": "link",
+                "value": ["https://www.espx.cloud", "https://mplayasia.com/"]
+              }
+            ]
+          },
+          {
+            "name": "Outsourcing",
+            "metas": [
+              {
+                "title": "Job description",
+                "value": "Provide solutions for customers with micro-sites"
+              },
+              {
+                "title": "Platform",
+                "display": "string",
+                "value": ["Wordpress", "Express", "Mariadb", "WPVIP"]
+              },
+              {
+                "title": "Position",
+                "value": "Technical Lead"
+              },
+              {
+                "title": "Partner",
+                "display": "string",
+                "value": ["Grab", "OCBC", "Facebook"]
+              },
+              {
+                "title": "Link",
+                "display": "link",
+                "value": [
+                  "https://wethinkdigital.fb.com/",
+                  "https://www.facebook.com/business/m/going-global"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "subheading": "Viral-work",
+        "time": "07/2018 - 10/2019",
+        "projects": [
+          {
+            "name": "Platform KOL",
+            "metas": [
+              {
+                "title": "Job description",
+                "value": "Provide KOL platform which manage influencer and branch to help them can work together\n                  - The platform supports connecting KOL and Brand together\n                  - Crawl data user from facebook\n                  - Manage KOL, BRAND, ADMIN\n                  - Manage campaign\n                    "
+              },
+              {
+                "title": "Platform",
+                "display": "string",
+                "value": ["Express", "Laravel", "Mongodb", "Redis"]
+              },
+              {
+                "title": "Position",
+                "value": "Backend developer"
+              }
+            ]
+          },
+          {
+            "name": "Crawler System",
+            "metas": [
+              {
+                "title": "Job description",
+                "value": "Provide crawler support\n                  - Collect post information every day from social networks (facebook, instagram, youtube)\n                  - Crawl user's information\n                  - Screenshot post\n                    "
+              },
+              {
+                "title": "Platform",
+                "display": "string",
+                "value": [
+                  "Python",
+                  "Socket",
+                  "Redis",
+                  "Mongodb",
+                  "Selenium",
+                  "Queue"
+                ]
+              },
+              {
+                "title": "Position",
+                "value": "Backend developer"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "subheading": "Solazu",
+        "time": "2016-07/2018",
+        "projects": [
+          {
+            "name": "Hotel search system",
+            "metas": [
+              {
+                "title": "Job description",
+                "value": "- 3rd hotel search system of Japan\n                  - Crawl data from 32 OTA service when search\n                  - Support deep-link\n                  - Minimize latency\n                    "
+              },
+              {
+                "title": "Platform",
+                "display": "string",
+                "value": [
+                  "Ruby",
+                  "Redis",
+                  "Firebase",
+                  "ReactJs",
+                  "Elastic Search",
+                  "SideKiq",
+                  "Mysql"
+                ]
+              },
+              {
+                "title": "Position",
+                "value": "Backend developer"
+              },
+              {
+                "title": "Link",
+                "display": "link",
+                "value": ["https://www.travel.co.jp/"]
+              }
+            ]
+          },
+          {
+            "name": "Themes in theme-forest",
+            "metas": [
+              {
+                "title": "Job description",
+                "value": "Generate themes/plugins to theme-forest\n                  - Build themes, plugins, Short-codes, ...\n                  - Major topics: education, music, hearty, events, ...\n                    "
+              },
+              {
+                "title": "Platform",
+                "display": "string",
+                "value": ["CMS Wordpress"]
+              },
+              {
+                "title": "Position",
+                "value": "Backend developer"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "subheading": "Freelancer",
+        "time": "2015",
+        "projects": [
+          {
+            "name": null,
+            "metas": [
+              {
+                "title": "Platform",
+                "display": "string",
+                "value": [
+                  "wordpress",
+                  "laravel",
+                  "yii",
+                  "firebase",
+                  "payment gateway integration",
+                  "QR code",
+                  "VueJs"
+                ]
+              },
+              {
+                "title": "Position",
+                "value": "Fullstack"
+              },
+              {
+                "title": "Product",
+                "display": "string",
+                "value": [
+                  "Nhị Long",
+                  "Extrim",
+                  "Hoàng Anh",
+                  "Sabaidee",
+                  "Techvsi",
+                  "Nhật Quang",
+                  "Nhân Hòa"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

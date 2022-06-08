@@ -14,10 +14,11 @@ function App({ Component, pageProps }: AppProps) {
 
   useEffect(() => {
     const { userId } = router.query;
-    if (userId && !user)
+    if (userId && !user) {
       getUser(userId as string).then((user: IUser) => {
         setUser(user);
       });
+    }
   }, [router, user]);
 
   const [step, setStep] = useState<AppStep>(AppStep.PREVIEW);
