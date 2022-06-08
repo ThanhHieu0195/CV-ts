@@ -5,6 +5,7 @@ export enum IconType {
   BIRTHDAY = "birthday",
   OBJECTIVE = "objective",
   WORK_EXPERIENCE = "work-experience",
+  LIST = "list",
 }
 
 export const IconTypeList: IconType[] = [
@@ -14,4 +15,5 @@ export const IconTypeList: IconType[] = [
   IconType.BIRTHDAY,
   IconType.OBJECTIVE,
   IconType.WORK_EXPERIENCE,
+  IconType.LIST,
 ];

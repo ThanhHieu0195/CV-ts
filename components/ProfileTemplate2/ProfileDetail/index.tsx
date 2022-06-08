@@ -1,7 +1,7 @@
 import React from "react";
 import { IDetail, IUser } from "@/libs/models/User";
 import { useTheme } from "@/libs/theme";
-import InputField, { InputFieldType } from "../../InputField";
+import DispalyField, { InputFieldType } from "../../InputField";
 
 type ItemProps = {
   data: IDetail;
@@ -19,19 +19,19 @@ const ProfileDetailItem = ({ data }: ItemProps) => {
               "mr-2 text-xl rounded-full p-2 text-white " + theme.primary.bgIcon
             }
           >
-            <InputField type={InputFieldType.ICON_FIELD} value={data.icon} />
+            <DispalyField type={InputFieldType.ICON_FIELD} value={data.icon} />
           </div>
         )}
         {data.heading && (
           <div className={"text-xl font-bold " + theme.color2}>
-            <InputField value={data.heading} />
+            <DispalyField value={data.heading} />
           </div>
         )}
       </div>
       <div className="pl-4">
         {data.description && (
           <div className="text-base">
-            <InputField
+            <DispalyField
               value={data.description}
               type={InputFieldType.AREA_FIELD}
             />
@@ -40,17 +40,17 @@ const ProfileDetailItem = ({ data }: ItemProps) => {
         {data.detail?.map((detail, idxDetail) => (
           <div key={idxDetail}>
             <div className="text-lg font-bold pb-2">
-              <InputField value={detail.heading} />
+              <DispalyField value={detail.heading} />
             </div>
             <div className="pl-4">
               {detail?.data.map((subItem, idxSubItem) => (
                 <div key={idxSubItem} className="pb-4">
                   <div className="flex items-center justify-between">
                     <div className="text-md font-bold">
-                      <InputField value={subItem.subheading} />
+                      <DispalyField value={subItem.subheading} />
                     </div>
                     <div className="text-sm">
-                      <InputField value={subItem.time} />
+                      <DispalyField value={subItem.time} />
                     </div>
                   </div>
                   <div className="pl-4 w-4/5">
@@ -60,7 +60,7 @@ const ProfileDetailItem = ({ data }: ItemProps) => {
                           key={idxSubItemContent}
                           className="px-2 py-1 text-base"
                         >
-                          <InputField value={text} />
+                          <DispalyField value={text} />
                         </li>
                       ))}
                     </ul>

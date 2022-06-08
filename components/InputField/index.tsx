@@ -14,7 +14,7 @@ type InputFieldProps = {
   onInputChange?: (value: string) => void;
 };
 
-const InputField = ({
+const DispalyField = ({
   value,
   type = InputFieldType.TEXT_FIELD,
 }: InputFieldProps) => {
@@ -32,4 +32,4 @@ const InputField = ({
   );
 };
 
-export default InputField;
+export default DispalyField;

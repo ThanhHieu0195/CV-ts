@@ -1,7 +1,7 @@
 import React from "react";
 import { IDetail, IUser } from "@/libs/models/User";
 import { useTheme } from "@/libs/theme";
-import InputField, { InputFieldType } from "../../InputField";
+import DispalyField, { InputFieldType } from "../../InputField";
 import logger from "@/libs/logger";
 import { IconType } from "@/libs/constants";
 
@@ -62,12 +62,12 @@ const Item = ({ data }: ItemProps) => {
               "mr-2 text-xl rounded-full p-2 text-white " + theme.primary.bgIcon
             }
           >
-            <InputField type={InputFieldType.ICON_FIELD} value={data.icon} />
+            <DispalyField type={InputFieldType.ICON_FIELD} value={data.icon} />
           </div>
         )}
         {data.heading && (
           <div className={"text-xl font-bold " + theme.color2}>
-            <InputField value={data.heading} />
+            <DispalyField value={data.heading} />
           </div>
         )}
       </div>
@@ -77,10 +77,10 @@ const Item = ({ data }: ItemProps) => {
             <div key={index} className="pb-4 pl-8 border-l-4 border-green-600">
               <div className="flex items-center justify-between pb-2">
                 <div className="text-xl font-bold">
-                  <InputField value={subItem.subheading} />
+                  <DispalyField value={subItem.subheading} />
                 </div>
                 <div className="text-xs">
-                  <InputField value={subItem.time} />
+                  <DispalyField value={subItem.time} />
                 </div>
               </div>
               <ul className="pl-4 w-4/5 list-disc">

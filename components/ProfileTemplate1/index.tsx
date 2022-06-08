@@ -1,15 +1,14 @@
 import React from "react";
 import DefaultLayout from "@/components/Layouts/Default";
-import Experience from "@/components/Profile/ProfileDetail2";
+import Experience from "@/components/ProfileTemplate1/ProfileDetail2";
 import { useTheme } from "@/libs/theme";
-import ProfileDetail from "@/components/Profile/ProfileDetail";
-import InputField from "@/components/InputField";
+import DispalyField from "@/components/InputField";
 import Avt from "../Avt";
 import BasicInfoItem from "./BasicInfoItem";
 import MetaInfoItem from "./MetaInfoItem";
-import ProfileDetailItem from "@/components/Profile/ProfileDetail";
+import ProfileDetailItem from "@/components/ProfileTemplate1/ProfileDetail";
 
-const Profile = ({ user }) => {
+const ProfileTemplate1 = ({ user }) => {
   const theme = useTheme();
   return (
     <div className="relative">
@@ -17,11 +16,11 @@ const Profile = ({ user }) => {
         <div className="mt-10">
           <div className={"p-5 text-right " + theme.primary.bg}>
             <h1 className={"text-3xl font-bold " + theme.color}>
-              <InputField value={user?.name} />
+              <DispalyField value={user?.name} />
             </h1>
             {user?.position && (
               <h2 className={theme.color + " text-lg"}>
-                {<InputField value={user?.position} />}
+                {<DispalyField value={user?.position} />}
               </h2>
             )}
           </div>
@@ -60,4 +59,4 @@ const Profile = ({ user }) => {
   );
 };
 
-export default Profile;
+export default ProfileTemplate1;

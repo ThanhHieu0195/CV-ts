@@ -5,6 +5,7 @@ export const useTheme = () => {
     primary: {
       bg: "bg-green-200",
       bgIcon: "bg-green-600",
+      bgWhite: "bg-white",
     },
     detail: {
       bg: "bg-white",

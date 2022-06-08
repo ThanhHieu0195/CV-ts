@@ -1,6 +1,10 @@
 import React from "react";
 import { IconType } from "../../libs/constants";
-import { AiOutlineMail, AiOutlinePhone } from "react-icons/ai";
+import {
+  AiOutlineMail,
+  AiOutlinePhone,
+  AiOutlineUnorderedList,
+} from "react-icons/ai";
 import { FaAddressBook, FaBirthdayCake } from "react-icons/fa";
 import { GiMedallist, GiTargetShot } from "react-icons/gi";
 
@@ -23,6 +27,8 @@ const Icon = ({ type, onClick }: IconProps) => {
       return <GiTargetShot onClick={onClick} />;
     case IconType.WORK_EXPERIENCE:
       return <GiMedallist onClick={onClick} />;
+    case IconType.LIST:
+      return <AiOutlineUnorderedList />;
     default:
       return <></>;
   }
