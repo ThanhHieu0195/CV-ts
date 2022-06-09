@@ -1,8 +1,7 @@
 import React from "react";
 import ProfileTemplate1 from "@/components/ProfileTemplate1";
 import ProfileTemplate2 from "@/components/ProfileTemplate2";
-import { getUser } from "@/libs/context/UserContext";
-
+import api from "@/libs/api";
 const ProfileIndex = ({ user }) => {
   return (
     <div className="relative">
@@ -24,7 +23,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const { userId } = params;
-  const user = await getUser(userId as string);
+  const user = await api.getUser(userId as string);
   return { props: { user } };
 }
 
