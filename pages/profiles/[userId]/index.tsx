@@ -4,10 +4,10 @@ import ProfileTemplate2 from "@/components/ProfileTemplate2";
 import api from "@/libs/api";
 const ProfileIndex = ({ user }) => {
   return (
-    <div className="relative">
+    <>
       {user?.version === "1" && <ProfileTemplate1 user={user} />}
       {user?.version === "2" && <ProfileTemplate2 user={user} />}
-    </div>
+    </>
   );
 };
 

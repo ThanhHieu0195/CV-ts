@@ -13,9 +13,9 @@ import { IconType } from "@/libs/constants";
 const ProfileTemplate2 = ({ user }) => {
   const theme = useTheme();
   return (
-    <div className="relative">
+    <div className="pdf-page">
       <DefaultLayout>
-        <div className="mt-10">
+        <div className="mt-4">
           <div className={"flex flex-col items-center " + theme.primary.bg}>
             <div className="flex items-center w-full">
               <div className="w-1/3">
@@ -147,8 +147,11 @@ const ProfileTemplate2 = ({ user }) => {
                   </div>
                 </div>
               </div>
-
-              {user.experience && <Experience detail={user.experience} />}
+              {user.experience && (
+                <div>
+                  <Experience detail={user.experience} />
+                </div>
+              )}
             </div>
           </div>
         </div>

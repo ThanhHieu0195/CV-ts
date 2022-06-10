@@ -9,3 +9,22 @@ html {
 body {
     font-family:  'Roboto', sans-serif;
 }
+
+@media print {
+    .pdf-page {
+        page-break-inside: avoid;
+        page-break-after: always;
+    }
+
+    .break-page-after {
+        page-break-after: always;
+    }
+
+    .avoid-break-page {
+        page-break-inside: avoid;
+    }
+}
+
+@page {
+    background-color: brown;
+}

@@ -74,7 +74,10 @@ const Item = ({ data }: ItemProps) => {
       <div className="pl-4">
         {data.data.map((subItem, index) => (
           <>
-            <div key={index} className="pb-4 pl-8 border-l-4 border-green-600">
+            <div
+              key={index}
+              className="pb-4 pl-8 border-l-4 border-green-600 avoid-break-page"
+            >
               <div className="flex items-center justify-between pb-2">
                 <div className="text-xl font-bold">
                   <DispalyField value={subItem.subheading} />
