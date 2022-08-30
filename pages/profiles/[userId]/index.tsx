@@ -15,7 +15,9 @@ export async function getStaticPaths() {
   return {
     paths: [
       { params: { userId: "tran-cao-thanh-hieu" } },
+      { params: { userId: "tran-cao-thanh-hieu-01" } },
       { params: { userId: "tran-cao-thanh-hieu-02" } },
+      { params: { userId: "tran-cao-thanh-hieu-03" } },
     ],
     fallback: false,
   };

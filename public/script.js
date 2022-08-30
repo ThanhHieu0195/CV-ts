@@ -15,9 +15,8 @@ const SetPageSize = async () => {
     cssPagedMedia(`@page {size: ${size} }`);
   };
   const InUnitHeight = boxHeight * 0.0104166667;
-  const InUnitWidth = boxWidth * 0.0104166667;
-  console.info("InUnit", boxHeight, InUnitWidth);
-  cssPagedMedia.size(`${InUnitWidth}in ${InUnitHeight.toFixed(4)}in`);
+  console.info("InUnit", InUnitHeight);
+  cssPagedMedia.size(`20in ${InUnitHeight}in`);
   clearInterval(action);
 };
 
