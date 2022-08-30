@@ -60,7 +60,7 @@
         "time": "03/2021 - 03/2022",
         "projects": [
           {
-            "name": "Education",
+            "name": "Authentication module",
             "metas": [
               {
                 "title": "Job description",
@@ -141,7 +141,7 @@
             ]
           },
           {
-            "name": "Pentagon Application",
+            "name": "Pentagon App",
             "metas": [
               {
                 "title": "Job description",
@@ -157,6 +157,35 @@
                 "value": "Mobile Dev"
               }
             ]
+          },
+          {
+            "name": "Juken App",
+            "metas": [
+              {
+                "title": "Job description",
+                "value": "Website helps to find universities"
+              },
+              {
+                "title": "Platform",
+                "display": "string",
+                "value": [
+                  "NextJs",
+                  "NestJs",
+                  "GraphQL",
+                  "AWS Services",
+                  "IaS Cloudformation"
+                ]
+              },
+              {
+                "title": "Position",
+                "value": "Fullstack"
+              },
+              {
+                "title": "Link",
+                "display": "link",
+                "value": ["https://juken.ei-navi.jp/"]
+              }
+            ]
           }
         ]
       },
@@ -165,7 +194,7 @@
         "time": "10/2019 - 03/2021",
         "projects": [
           {
-            "name": "ESPx cloud",
+            "name": "Streaming media platform",
             "metas": [
               {
                 "title": "Job description",

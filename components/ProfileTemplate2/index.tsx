@@ -5,7 +5,6 @@ import { useTheme } from "@/libs/theme";
 import DispalyField from "@/components/InputField";
 import Avt from "../Avt";
 import BasicInfoItem from "./BasicInfoItem";
-import MetaInfoItem from "./MetaInfoItem";
 import ProfileDetailItem from "@/components/ProfileTemplate1/ProfileDetail";
 import Heading from "../Heading";
 import { IconType } from "@/libs/constants";
@@ -15,7 +14,7 @@ const ProfileTemplate2 = ({ user }) => {
   return (
     <div className="pdf-page">
       <DefaultLayout>
-        <div className="mt-4">
+        <div className="mt-4 ">
           <div className={"flex flex-col items-center " + theme.primary.bg}>
             <div className="flex items-center w-full">
               <div className="w-1/3">

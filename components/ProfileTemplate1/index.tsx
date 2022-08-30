@@ -13,7 +13,7 @@ const ProfileTemplate1 = ({ user }) => {
   return (
     <div className="relative">
       <DefaultLayout>
-        <div className="mt-10">
+        <div className="">
           <div className={"p-5 text-right " + theme.primary.bg}>
             <h1 className={"text-3xl font-bold " + theme.color}>
               <DispalyField value={user?.name} />
