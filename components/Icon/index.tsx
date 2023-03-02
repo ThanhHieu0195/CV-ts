@@ -1,6 +1,8 @@
 import React from "react";
 import { IconType } from "../../libs/constants";
 import {
+  AiFillMail,
+  AiFillPhone,
   AiOutlineMail,
   AiOutlinePhone,
   AiOutlineUnorderedList,
@@ -10,16 +12,23 @@ import { GiMedallist, GiTargetShot } from "react-icons/gi";
 
 export type IconProps = {
   type: IconType;
+  filled?: boolean;
   onClick?: () => void;
 };
 
-const Icon = ({ type, onClick }: IconProps) => {
+const Icon = ({ type, onClick, filled = false }: IconProps) => {
   switch (type) {
     case IconType.MAIL:
+      if (filled) {
+        return <AiFillMail onClick={onClick} />;
+      }
       return <AiOutlineMail onClick={onClick} />;
     case IconType.ADDRESS:
       return <FaAddressBook onClick={onClick} />;
     case IconType.PHONE:
+      if (filled) {
+        return <AiFillPhone onClick={onClick} />;
+      }
       return <AiOutlinePhone onClick={onClick} />;
     case IconType.BIRTHDAY:
       return <FaBirthdayCake onClick={onClick} />;

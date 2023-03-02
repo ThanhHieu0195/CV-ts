@@ -2,7 +2,7 @@ import React from "react";
 import { IBasicInfo } from "../../../libs/models/User";
 import { IconType } from "../../../libs/constants";
 import { useTheme } from "../../../libs/theme";
-import DispalyField, { InputFieldType } from "../../InputField";
+import DisplayField, { InputFieldType } from "../../InputField";
 
 type ItemProps = {
   text: string;
@@ -17,10 +17,10 @@ const BasicInfoItem = ({ text, icon }: ItemProps) => {
       <div
         className={`rounded-full p-2 mr-2 text-xl ${theme.summary.basicInfo.icon.bg} ${theme.summary.basicInfo.icon.border}`}
       >
-        <DispalyField type={InputFieldType.ICON_FIELD} value={icon} />
+        <DisplayField type={InputFieldType.ICON_FIELD} value={icon} />
       </div>
       <span className="text-base">
-        <DispalyField value={text} />
+        <DisplayField value={text} />
       </span>
     </div>
   );

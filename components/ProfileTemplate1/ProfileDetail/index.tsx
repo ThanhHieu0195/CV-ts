@@ -1,7 +1,7 @@
 import React from "react";
 import { IDetail, IUser } from "@/libs/models/User";
 import { useTheme } from "@/libs/theme";
-import DispalyField, { InputFieldType } from "../../InputField";
+import DisplayField, { InputFieldType } from "../../InputField";
 import Heading from "@/components/Heading";
 
 type ItemProps = {
@@ -19,7 +19,7 @@ const ProfileDetailItem = ({ data }: ItemProps) => {
       <div className="pl-4">
         {data.description && (
           <div className="text-base">
-            <DispalyField
+            <DisplayField
               value={data.description}
               type={InputFieldType.AREA_FIELD}
             />
@@ -28,17 +28,17 @@ const ProfileDetailItem = ({ data }: ItemProps) => {
         {data.detail?.map((detail, idxDetail) => (
           <div key={idxDetail}>
             <div className="text-lg font-bold pb-2">
-              <DispalyField value={detail.heading} />
+              <DisplayField value={detail.heading} />
             </div>
             <div className="pl-4">
               {detail?.data.map((subItem, idxSubItem) => (
                 <div key={idxSubItem} className="pb-4">
                   <div className="flex items-center justify-between">
                     <div className="text-md font-bold">
-                      <DispalyField value={subItem.subheading} />
+                      <DisplayField value={subItem.subheading} />
                     </div>
                     <div className="text-sm">
-                      <DispalyField value={subItem.time} />
+                      <DisplayField value={subItem.time} />
                     </div>
                   </div>
                   <div className="pl-4 w-4/5">
@@ -48,7 +48,7 @@ const ProfileDetailItem = ({ data }: ItemProps) => {
                           key={idxSubItemContent}
                           className="px-2 py-1 text-base"
                         >
-                          <DispalyField value={text} />
+                          <DisplayField value={text} />
                         </li>
                       ))}
                     </ul>

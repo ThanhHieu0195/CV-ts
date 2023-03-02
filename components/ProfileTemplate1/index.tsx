@@ -2,7 +2,7 @@ import React from "react";
 import DefaultLayout from "@/components/Layouts/Default";
 import Experience from "@/components/ProfileTemplate1/ProfileDetail2";
 import { useTheme } from "@/libs/theme";
-import DispalyField from "@/components/InputField";
+import DisplayField from "@/components/InputField";
 import Avt from "../Avt";
 import BasicInfoItem from "./BasicInfoItem";
 import MetaInfoItem from "./MetaInfoItem";
@@ -16,11 +16,11 @@ const ProfileTemplate1 = ({ user }) => {
         <div className="">
           <div className={"p-5 text-right " + theme.primary.bg}>
             <h1 className={"text-3xl font-bold " + theme.color}>
-              <DispalyField value={user?.name} />
+              <DisplayField value={user?.name} />
             </h1>
             {user?.position && (
               <h2 className={theme.color + " text-lg"}>
-                {<DispalyField value={user?.position} />}
+                {<DisplayField value={user?.position} />}
               </h2>
             )}
           </div>

@@ -2,7 +2,7 @@ import React from "react";
 import DefaultLayout from "@/components/Layouts/Default";
 import Experience from "@/components/ProfileTemplate1/ProfileDetail2";
 import { useTheme } from "@/libs/theme";
-import DispalyField from "@/components/InputField";
+import DisplayField from "@/components/InputField";
 import Avt from "../Avt";
 import BasicInfoItem from "./BasicInfoItem";
 import ProfileDetailItem from "@/components/ProfileTemplate1/ProfileDetail";
@@ -24,7 +24,7 @@ const ProfileTemplate2 = ({ user }) => {
                 className={" flex flex-col py-4 pl-4" + theme.primary.bgWhite}
               >
                 <h1 className={"text-3xl font-bold " + theme.color}>
-                  <DispalyField value={user?.name} />
+                  <DisplayField value={user?.name} />
                 </h1>
                 <br />
                 {user?.basicInfos?.map(({ text, icon }, idx) => (

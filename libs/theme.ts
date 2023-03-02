@@ -1,4 +1,6 @@
-export const useTheme = () => {
+import { ThemeType } from "./types/theme.type";
+
+export const useTheme = (): ThemeType => {
   return {
     color: "text-black",
     color2: "text-green-600",
@@ -26,5 +28,14 @@ export const useTheme = () => {
         },
       },
     },
+  };
+};
+
+export const useOverrideTheme = (
+  overridedData: Partial<ThemeType>
+): ThemeType => {
+  return {
+    ...useTheme(),
+    ...overridedData,
   };
 };

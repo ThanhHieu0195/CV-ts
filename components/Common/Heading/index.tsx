@@ -1,19 +1,15 @@
 import React from "react";
 import { IconType } from "@/libs/constants";
-import { ThemeType } from "@/libs/types/theme.type";
-import DisplayField, { InputFieldType } from "../InputField";
 import { useTheme } from "@/libs/theme";
+import DisplayField, { InputFieldType } from "@/components/InputField";
 
 interface Props {
-  icon?: IconType;
+  icon: IconType;
   heading: string;
-  theme?: ThemeType;
 }
 
-const Heading = ({ icon, heading, theme }: Props) => {
-  if (!theme) {
-    theme = useTheme();
-  }
+const Heading = ({ icon, heading }: Props) => {
+  const theme = useTheme();
   return (
     <div>
       <div className="flex items-center pb-2">

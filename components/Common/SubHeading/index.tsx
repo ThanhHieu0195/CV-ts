@@ -1,19 +1,15 @@
 import React from "react";
+import DisplayField, { InputFieldType } from "@/components/InputField";
 import { IconType } from "@/libs/constants";
 import { ThemeType } from "@/libs/types/theme.type";
-import DisplayField, { InputFieldType } from "../InputField";
-import { useTheme } from "@/libs/theme";
 
 interface Props {
   icon?: IconType;
   heading: string;
-  theme?: ThemeType;
+  theme: ThemeType;
 }
 
-const Heading = ({ icon, heading, theme }: Props) => {
-  if (!theme) {
-    theme = useTheme();
-  }
+const SubHeading = ({ icon, heading, theme }: Props) => {
   return (
     <div>
       <div className="flex items-center pb-2">
@@ -26,7 +22,7 @@ const Heading = ({ icon, heading, theme }: Props) => {
             <DisplayField type={InputFieldType.ICON_FIELD} value={icon} />
           </div>
         )}
-        <div className={"text-xl font-bold " + theme.color2}>
+        <div className={"text-xl font-bold " + theme.color}>
           <DisplayField value={heading} />
         </div>
       </div>
@@ -34,4 +30,4 @@ const Heading = ({ icon, heading, theme }: Props) => {
   );
 };
 
-export default Heading;
+export default SubHeading;

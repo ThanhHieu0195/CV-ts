@@ -1,7 +1,7 @@
 import React from "react";
 import { useTheme } from "../../../libs/theme";
 import { IMetaInfo } from "../../../libs/models/User";
-import DispalyField from "@/components/InputField";
+import DisplayField from "@/components/InputField";
 
 type ItemProps = {
   data: IMetaInfo;
@@ -15,7 +15,7 @@ const MetaInfoItem = ({ data }: ItemProps) => {
         <h3
           className={`text-lg font-bold ${theme.summary.MetaInfo.heading} pr-2`}
         >
-          <DispalyField value={data.heading} />
+          <DisplayField value={data.heading} />
         </h3>
         <span
           className={`w-full h-[1px] ${theme.summary.MetaInfo.line.bg}`}
@@ -25,7 +25,7 @@ const MetaInfoItem = ({ data }: ItemProps) => {
         <ul className="list-dict">
           {data.infos.map((text, idx) => (
             <li key={idx} className="pb-5 text-base">
-              <DispalyField value={text} />
+              <DisplayField value={text} />
             </li>
           ))}
         </ul>
