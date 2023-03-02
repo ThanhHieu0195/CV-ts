@@ -32,7 +32,7 @@ const DELTA = 0.27;
     //   userId + ".pdf"
     // );
 
-    const pdfPath = path.join("/mnt/e", userId + ".pdf");
+    const pdfPath = path.join("E:\\pdf", userId + ".pdf");
     let height = await page.evaluate(
       () => document.documentElement.offsetHeight
     );

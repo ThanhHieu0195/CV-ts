@@ -70,6 +70,14 @@ const ProfileTemplate3 = ({ user }: { user: User }) => {
             <div className={`w-2/3`}>
               <div className="pt-8 px-8">
                 <DisplayField variant="main-heading" value={user.name} />
+                <HSpace variant="base" />
+
+                <DisplayField
+                  variant="text"
+                  isFontBold={true}
+                  extraClass="text-gray-500"
+                  value={user.position}
+                />
                 <HSpace variant="section" />
 
                 {user?.detail?.map((detail, idx) => (
