@@ -1,7 +1,7 @@
-import { AppProps } from "next/dist/next-server/lib/router/router";
 import React, { useState } from "react";
 import { useTheme } from "@/libs/theme";
 import "@/styles/globals.css";
+import { AppProps } from "next/app";
 
 function App({ Component, pageProps }: AppProps) {
   const theme = useTheme();

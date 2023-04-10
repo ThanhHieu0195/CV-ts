@@ -60,7 +60,8 @@
     "data": [
       {
         "subheading": "Shift Asia",
-        "time": "03/2021 - 03/2023",
+        "time": "03/2021 - now",
+        "isReverse": true,
         "projects": [
           {
             "name": "Authentication module",
@@ -83,10 +84,7 @@
                   " Pug"
                 ]
               },
-              {
-                "title": "Position",
-                "value": "Fullstack"
-              },
+              { "title": "Position", "value": "Fullstack" },
               {
                 "title": null,
                 "display": "link",
@@ -112,10 +110,7 @@
                   "Multiple workspace"
                 ]
               },
-              {
-                "title": "Position",
-                "value": "Fullstack"
-              }
+              { "title": "Position", "value": "Fullstack" }
             ]
           },
           {
@@ -137,10 +132,7 @@
                   "AWS Workspace"
                 ]
               },
-              {
-                "title": "Position",
-                "value": "Fullstack"
-              }
+              { "title": "Position", "value": "Fullstack" }
             ]
           },
           {
@@ -155,10 +147,7 @@
                 "display": "string",
                 "value": ["Flutter / Dart"]
               },
-              {
-                "title": "Position",
-                "value": "Mobile Dev"
-              }
+              { "title": "Position", "value": "Mobile Dev" }
             ]
           },
           {
@@ -179,10 +168,7 @@
                   "IaS Cloudformation"
                 ]
               },
-              {
-                "title": "Position",
-                "value": "Fullstack"
-              },
+              { "title": "Position", "value": "Fullstack" },
               {
                 "title": "Link",
                 "display": "link",
@@ -202,10 +188,7 @@
                 "display": "string",
                 "value": ["Java", " Gradle", " Selenium", " Appium", "Selenide"]
               },
-              {
-                "title": "Position",
-                "value": "Fullstack"
-              }
+              { "title": "Position", "value": "Fullstack" }
             ]
           }
         ]

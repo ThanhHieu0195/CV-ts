@@ -43,6 +43,11 @@ const Item = ({ item }: { item: Meta }) => {
 const ProfileTemplate3 = ({ user }: { user: User }) => {
   const themeDefault = useTheme();
   const theme = useOverrideTheme({
+    color2: "text-black",
+    primary: {
+      ...themeDefault.primary,
+      bgIcon: "bg-black",
+    },
     summary: {
       ...themeDefault.summary,
       bg: "bg-[#626262]",
@@ -109,7 +114,7 @@ const ProfileTemplate3 = ({ user }: { user: User }) => {
 
                     <div>
                       {item.projects.map((project, idx) => (
-                        <div className="px-4" key={idx}>
+                        <div className="px-4" key={"project" + idx}>
                           <DisplayField
                             extraClass="font-bold"
                             variant="sub-heading"
@@ -158,3 +163,4 @@ const ProfileTemplate3 = ({ user }: { user: User }) => {
 };
 
 export default ProfileTemplate3;
+

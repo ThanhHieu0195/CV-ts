@@ -16,7 +16,7 @@ const DELTA = 0.27;
     console.info("start save PDF");
 
     const page = await browser.newPage();
-    const userId = "tran-cao-thanh-hieu-03";
+    const userId = "tran-cao-thanh-hieu-04";
 
     await page.goto(`http://localhost:3000/profiles/${userId}`);
     await page.waitForTimeout(5000);
@@ -46,7 +46,7 @@ const DELTA = 0.27;
     });
 
     const actualWidth = width + 300;
-    const actualHeight = height - 400;
+    const actualHeight = height - 200;
 
     console.info("actualWidth", actualWidth);
     console.info("actualHeight", actualHeight);

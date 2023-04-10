@@ -135,8 +135,11 @@ const ProfileTemplate2 = ({ user }) => {
                           {item?.groupName}
                         </div>
                         <div className="flex gap-2 flex-wrap">
-                          {item?.data?.map((text: string) => (
-                            <span className={`${theme.primary.bg} p-1 rounded`}>
+                          {item?.data?.map((text: string, idx) => (
+                            <span
+                              key={idx + "item"}
+                              className={`${theme.primary.bg} p-1 rounded`}
+                            >
                               <div className="text-sm">{text}</div>
                             </span>
                           ))}

@@ -28,6 +28,7 @@ export interface Project {
 }
 
 export interface Datum {
+  isReverse: boolean;
   subheading: string;
   time: string;
   projects: Project[];
