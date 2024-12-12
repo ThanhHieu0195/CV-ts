@@ -23,8 +23,8 @@
     "heading": "WORK EXPERIENCE",
     "data": [
       {
-        "subheading": "ShiftAsia",
-        "time": "03/2021 - 2024",
+        "subheading": "SHIFTINC",
+        "time": "03/2021 - NOW",
         "projects": [
           {
             "name": "Sensyn System",
@@ -33,13 +33,13 @@
                 "title": "Job description",
                 "display": "array",
                 "value": [
-                  "Building a system to monitor, check, and make statistics on construction projects (elevators, solar panels, factories, ...)",
+                  "Build a system to support monitoring, analysis and reporting of construction-related issues (solar panels, elevators, construction sites)",
 
-                  " - The system supports configuring and controlling \"Drone\" aircraft to designated locations to take pictures and send them to the system",
+                  " - Configure, plan flight routes, ... for drones,",
 
-                  "- combining with analysis modules + AI for evaluating and processing results",
+                  " - Using AI to analyze and identify problems from data brought back by drones",
 
-                  "- based on the results, create necessary reports"
+                  " - Display data on Map, create reports, report incidents"
                 ]
               },
               {
@@ -47,13 +47,14 @@
                 "display": "string",
                 "value": [
                   "VueJs",
-                  "Spring Boot",
-                  "ActiveMQ",
-                  "Kafka",
-                  "Postgres",
+                  "NuxtJs",
+                  "Laravel",
+                  "PHP",
                   "Redis",
-                  "TrinoDB",
-                  "AWS Services (Cloudformation, ECS, ECR, Route53, ALB, Cognito, ...)"
+                  "Azure function",
+                  "Azure service",
+                  "mysql",
+                  "python"
                 ]
               },
               {
@@ -72,7 +73,13 @@
             "metas": [
               {
                 "title": "Job description",
-                "value": "Building a business-to-business trading support system "
+                "display": "array",
+                "value": [
+                  "Building a sales platform that supports business-to-business connections",
+                  " - Provide product search, order and order tracking module",
+                  " - Provides a module that allows producers and suppliers to exchange, negotiate and track the progress of goods.",
+                  " - Provide module to manage catalog mall"
+                ]
               },
               {
                 "title": "Platform",
@@ -95,7 +102,7 @@
               {
                 "title": null,
                 "display": "link",
-                "value": ["https://juken.ei-navi.jp/"]
+                "value": ["https://jienielab.co.jp/"]
               }
             ]
           },

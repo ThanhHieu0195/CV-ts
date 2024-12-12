@@ -47,9 +47,11 @@ const Item = ({ data }: ItemProps) => {
           <div>
             {item.value.map((text, idx) => {
               return (
-                <div className="text-base pl-2 pb-2" key={idx}>
-                  {text}
-                </div>
+                <div
+                  className="text-base pl-2 pb-2"
+                  key={idx}
+                  dangerouslySetInnerHTML={{ __html: text }}
+                ></div>
               );
             })}
           </div>
