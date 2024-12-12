@@ -151,6 +151,8 @@ const ProfileTemplate4 = ({ user }) => {
                           "Ubuntu",
                           "Centos",
                           "Redis Search",
+                          "ActiveMQ",
+                          "Kafka",
                         ],
                       },
                       {
