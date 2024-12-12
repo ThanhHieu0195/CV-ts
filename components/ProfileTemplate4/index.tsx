@@ -9,8 +9,29 @@ import ProfileDetailItem from "@/components/ProfileTemplate1/ProfileDetail";
 import Heading from "../Heading";
 import { IconType } from "@/libs/constants";
 
-const ProfileTemplate2 = ({ user }) => {
-  const theme = useTheme();
+const ProfileTemplate4 = ({ user }) => {
+  const themeDefault = useTheme();
+  const theme = useOverrideTheme({
+    color2: "text-black",
+    primary: {
+      ...themeDefault.primary,
+      bgIcon: "bg-black",
+      // bg: "bg-gray-200",
+    },
+    summary: {
+      ...themeDefault.summary,
+      bg: "bg-[#626262]",
+      textColor: "text-white",
+      basicInfo: {
+        ...themeDefault.summary.basicInfo,
+        bg: "",
+        icon: {
+          bg: null,
+          border: "",
+        },
+      },
+    },
+  });
   return (
     <div className="pdf-page">
       <DefaultLayout>
@@ -49,20 +70,26 @@ const ProfileTemplate2 = ({ user }) => {
                 <Heading heading="TECH STACK" icon={IconType.LIST} />
                 <div className="px-4">
                   <div>Have experience using through projects</div>
-                  <div className="flex gap-4 flex-wrap">
+                  <div className="flex gap-2 flex-wrap">
                     {[
                       {
                         groupName: "Frontend",
                         data: [
                           "NextJs",
+                          "NuxtJs",
+                          "VueJs",
+                          "ReatJs",
+                          "ViteJs",
                           "Material UI",
                           "Antd",
+                          "Element UI",
                           "Tailwindcss",
                           "Gulp",
                           "Webpack",
                           "Wdio",
                           "Jest",
-                          "VueJs / AngularJs",
+                          "AngularJs",
+                          "Vuetify",
                         ],
                       },
                       {
@@ -71,17 +98,21 @@ const ProfileTemplate2 = ({ user }) => {
                           "FeathersJs",
                           "ExpressJs",
                           "NestJs",
+                          "Laravel",
                           "Loopback",
                           "Spring Boot",
                           "Flask",
+
+                          "Java",
+                          "Python",
                           "GraphQL",
                           "SocketIO",
                           "Wordpress",
-                          "Laravel",
                           "Yii",
                           "Flutter",
                           "Django",
                           "Ruby",
+                          "Golang",
                         ],
                       },
                       {
@@ -98,12 +129,9 @@ const ProfileTemplate2 = ({ user }) => {
                       {
                         groupName: "Devop",
                         data: [
-                          "Docker",
-                          "PM2",
-                          "Nginx",
-                          "Terraform",
-                          "Bash",
-                          "doctl",
+                          "Azure Service",
+                          "Azure Function",
+                          "Digital Ocean",
                           "AWS Cloudformation",
                           "AWS Cognito",
                           "AWS EC2",
@@ -113,6 +141,13 @@ const ProfileTemplate2 = ({ user }) => {
                           "AWS ALB",
                           "AWS ERC",
                           "AWS ECS",
+                          "Docker",
+                          "PM2",
+                          "Nginx",
+                          "Terraform",
+                          "Bash",
+                          "doctl",
+                          "Linux",
                           "Ubuntu",
                           "Centos",
                         ],
@@ -127,10 +162,15 @@ const ProfileTemplate2 = ({ user }) => {
                           "CDN services (Bunny, CloudFront, Cloudflare, ...)",
                           "Payment Gateway (Paypal, Momo, Ngan Luong, ...)",
                           "Digital Ocean",
+                          "Azure",
                         ],
                       },
+                      {
+                        groupName: "Mobile",
+                        data: ["Flutter", "React native"],
+                      },
                     ].map((item: any, idx) => (
-                      <div className="mb-1" key={idx}>
+                      <div className="mb-2 flex gap-2 flex-col" key={idx}>
                         <div className="text-lg font-bold">
                           {item?.groupName}
                         </div>
@@ -162,5 +202,5 @@ const ProfileTemplate2 = ({ user }) => {
   );
 };
 
-export default ProfileTemplate2;
+export default ProfileTemplate4;
 

@@ -42,19 +42,6 @@ const Item = ({ data }: ItemProps) => {
           <div className="text-base pl-2 pb-2">{item.value.join(", ")}</div>
         );
 
-      case "array":
-        return (
-          <div>
-            {item.value.map((text, idx) => {
-              return (
-                <div className="text-base pl-2 pb-2" key={idx}>
-                  {text}
-                </div>
-              );
-            })}
-          </div>
-        );
-
       case "link":
         return item.value?.map((text, idx) => (
           <div key={idx} className="text-base pl-2 pb-2 text-blue-500">
@@ -87,10 +74,7 @@ const Item = ({ data }: ItemProps) => {
       <div className="pl-4">
         {data.data.map((subItem, index) => (
           <>
-            <div
-              key={index}
-              className="pb-4 pl-8 border-l-4 border-green-600 avoid-break-page"
-            >
+            <div key={index} className="pb-4 pl-8 border-l-4 border-green-600">
               <div className="flex items-center justify-between pb-2">
                 <div className="text-xl font-bold">
                   <DisplayField value={subItem.subheading} />
@@ -147,4 +131,3 @@ const Experience = ({ detail }) => {
 };
 
 export default Experience;
-
