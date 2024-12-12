@@ -150,6 +150,7 @@ const ProfileTemplate4 = ({ user }) => {
                           "Linux",
                           "Ubuntu",
                           "Centos",
+                          "Redis Search",
                         ],
                       },
                       {
@@ -167,7 +168,13 @@ const ProfileTemplate4 = ({ user }) => {
                       },
                       {
                         groupName: "Mobile",
-                        data: ["Flutter", "React native"],
+                        data: [
+                          "Flutter",
+                          "React native",
+                          "Ionic",
+                          "CapacitorJs",
+                          "Java",
+                        ],
                       },
                     ].map((item: any, idx) => (
                       <div className="mb-2 flex gap-2 flex-col" key={idx}>
