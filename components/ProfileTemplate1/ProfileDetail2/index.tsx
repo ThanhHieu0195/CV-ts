@@ -103,8 +103,13 @@ const Item = ({ data }: ItemProps) => {
               </div>
               <ul className="pl-4 w-4/5 list-disc">
                 {subItem?.projects?.map((project, idx) => (
-                  <li key={idx}>
-                    <div className="text-md font-bold">{project.name}</div>
+                  <li
+                    key={idx}
+                    style={{ listStyle: project.name ? "initial" : "none" }}
+                  >
+                    {project.name && (
+                      <div className="text-md font-bold">{project.name}</div>
+                    )}
                     <div className="p-2 text-gray-800">
                       {project.metas?.map((item, idx) => (
                         <div key={idx}>

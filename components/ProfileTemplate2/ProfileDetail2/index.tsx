@@ -131,3 +131,4 @@ const Experience = ({ detail }) => {
 };
 
 export default Experience;
+

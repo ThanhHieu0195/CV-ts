@@ -220,7 +220,7 @@
       },
       {
         "subheading": "ESPxMEDIA",
-        "time": "10/2019 - 03/2021",
+        "time": "2019 - NOW",
         "projects": [
           {
             "name": "ESPx cloud",
@@ -249,7 +249,7 @@
               },
               {
                 "title": "Position",
-                "value": "Technical Leader"
+                "value": "Architecture Manager / Technical Leader"
               },
               {
                 "title": "Partner",
@@ -270,6 +270,44 @@
                   "https://mplayasia.com/",
                   "https://www.nlb.gov.sg/",
                   "https://www.nationalgallery.sg/"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "subheading": "TechVsi",
+        "time": "2019 - 03/2021",
+        "projects": [
+          {
+            "name": null,
+            "metas": [
+              {
+                "title": "Position",
+                "value": "Architecture Manager"
+              },
+              {
+                "title": "Job description",
+                "value": "Provide campaign implementation solutions for partners"
+              },
+              {
+                "title": "Platform",
+                "display": "string",
+                "value": ["WPVIP", "Mariadb", "PHP", "NodeJs"]
+              },
+
+              {
+                "title": "Partner",
+                "display": "string",
+                "value": ["Grab", "OCBC", "Facebook"]
+              },
+              {
+                "title": "Link",
+                "display": "link",
+                "value": [
+                  "https://wethinkdigital.fb.com/",
+                  "https://www.facebook.com/business/m/going-global"
                 ]
               }
             ]
