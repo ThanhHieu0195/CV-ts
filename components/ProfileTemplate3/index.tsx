@@ -43,7 +43,7 @@ const Item = ({ item }: { item: Meta }) => {
 const ProfileTemplate3 = ({ user }: { user: User }) => {
   const themeDefault = useTheme();
   const theme = useOverrideTheme({
-    color2: "text-black",
+    textColorSecondary: "text-black",
     primary: {
       ...themeDefault.primary,
       bgIcon: "bg-black",

@@ -23,7 +23,7 @@ const ProfileTemplate2 = ({ user }) => {
               <div
                 className={" flex flex-col py-4 pl-4" + theme.primary.bgWhite}
               >
-                <h1 className={"text-3xl font-bold " + theme.color}>
+                <h1 className={"text-3xl font-bold " + theme.textColorPrimary}>
                   <DisplayField value={user?.name} />
                 </h1>
                 <br />

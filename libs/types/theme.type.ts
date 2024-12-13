@@ -36,9 +36,12 @@ export interface Summary {
 }
 
 export interface ThemeType {
-  color: string;
-  color2: string;
+  textColorPrimary: string;
+  textColorIcon: string;
+  textColorSecondary: string;
+  bgBorder: string;
   primary: Primary;
   detail: Detail;
   summary: Summary;
 }
+

@@ -22,7 +22,7 @@ const SubHeading = ({ icon, heading, theme }: Props) => {
             <DisplayField type={InputFieldType.ICON_FIELD} value={icon} />
           </div>
         )}
-        <div className={"text-xl font-bold " + theme.color}>
+        <div className={"text-xl font-bold " + theme.textColorPrimary}>
           <DisplayField value={heading} />
         </div>
       </div>
@@ -31,3 +31,4 @@ const SubHeading = ({ icon, heading, theme }: Props) => {
 };
 
 export default SubHeading;
+

@@ -22,7 +22,7 @@ const Heading = ({ icon, heading }: Props) => {
             <DisplayField type={InputFieldType.ICON_FIELD} value={icon} />
           </div>
         )}
-        <div className={"text-xl font-bold " + theme.color2}>
+        <div className={"text-xl font-bold " + theme.textColorSecondary}>
           <DisplayField value={heading} />
         </div>
       </div>
@@ -31,3 +31,4 @@ const Heading = ({ icon, heading }: Props) => {
 };
 
 export default Heading;
+

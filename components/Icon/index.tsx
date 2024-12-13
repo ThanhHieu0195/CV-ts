@@ -9,14 +9,16 @@ import {
 } from "react-icons/ai";
 import { FaAddressBook, FaBirthdayCake } from "react-icons/fa";
 import { GiMedallist, GiTargetShot } from "react-icons/gi";
+import { ThemeType } from "@/libs/types/theme.type";
 
 export type IconProps = {
   type: IconType;
   filled?: boolean;
   onClick?: () => void;
+  theme: ThemeType;
 };
 
-const Icon = ({ type, onClick, filled = false }: IconProps) => {
+const Icon = ({ type, onClick, filled = false, theme }: IconProps) => {
   switch (type) {
     case IconType.MAIL:
       if (filled) {
@@ -44,3 +46,4 @@ const Icon = ({ type, onClick, filled = false }: IconProps) => {
 };
 
 export default Icon;
+

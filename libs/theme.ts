@@ -2,8 +2,9 @@ import { ThemeType } from "./types/theme.type";
 
 export const useTheme = (): ThemeType => {
   return {
-    color: "text-black",
-    color2: "text-green-600",
+    textColorPrimary: "text-black",
+    textColorSecondary: "text-green-600",
+    bgBorder: "text-white",
     primary: {
       bg: "bg-green-200",
       bgIcon: "bg-green-600",
@@ -39,3 +40,4 @@ export const useOverrideTheme = (
     ...overridedData,
   };
 };
+

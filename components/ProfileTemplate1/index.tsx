@@ -15,11 +15,11 @@ const ProfileTemplate1 = ({ user }) => {
       <DefaultLayout>
         <div className="">
           <div className={"p-5 text-right " + theme.primary.bg}>
-            <h1 className={"text-3xl font-bold " + theme.color}>
+            <h1 className={"text-3xl font-bold " + theme.textColorPrimary}>
               <DisplayField value={user?.name} />
             </h1>
             {user?.position && (
-              <h2 className={theme.color + " text-lg"}>
+              <h2 className={theme.textColorPrimary + " text-lg"}>
                 {<DisplayField value={user?.position} />}
               </h2>
             )}
@@ -60,3 +60,4 @@ const ProfileTemplate1 = ({ user }) => {
 };
 
 export default ProfileTemplate1;
+

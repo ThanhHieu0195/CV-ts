@@ -7,7 +7,7 @@ function App({ Component, pageProps }: AppProps) {
   const theme = useTheme();
   return (
     <div className="w-full text-white bg-[#e3e3e3] flex items-center justify-center font-normal">
-      <div className={theme.color + " overflow-hidden"}>
+      <div className={theme.textColorPrimary + " overflow-hidden"}>
         <Component {...pageProps} />
       </div>
       <link
@@ -20,3 +20,4 @@ function App({ Component, pageProps }: AppProps) {
 }
 
 export default App;
+

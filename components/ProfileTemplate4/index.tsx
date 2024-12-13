@@ -12,23 +12,27 @@ import { IconType } from "@/libs/constants";
 const ProfileTemplate4 = ({ user }) => {
   const themeDefault = useTheme();
   const theme = useOverrideTheme({
-    color2: "text-black",
+    textColorPrimary: "text-white",
+    textColorSecondary: "text-black",
+    textColorIcon: "text-white",
+    bgBorder: "bg-white",
     primary: {
       ...themeDefault.primary,
       bgIcon: "bg-black",
-      // bg: "bg-gray-200",
+      bg: "bg-[#626262]",
     },
     summary: {
       ...themeDefault.summary,
-      bg: "bg-[#626262]",
+      // bg: "bg-[#626262]",
+      bg: "bg-[#e3e3e3] ",
       textColor: "text-white",
       basicInfo: {
         ...themeDefault.summary.basicInfo,
         bg: "",
-        icon: {
-          bg: null,
-          border: "",
-        },
+        // icon: {
+        //   bg: null,
+        //   border: "",
+        // },
       },
     },
   });
@@ -39,18 +43,18 @@ const ProfileTemplate4 = ({ user }) => {
           <div className={"flex flex-col items-center " + theme.primary.bg}>
             <div className="flex items-center w-full">
               <div className="w-1/3">
-                <Avt src={user?.avt} />
+                <Avt src={user?.avt} theme={theme} />
               </div>
               <div
                 className={" flex flex-col py-4 pl-4" + theme.primary.bgWhite}
               >
-                <h1 className={"text-3xl font-bold " + theme.color}>
+                <h1 className={"text-3xl font-bold " + theme.textColorPrimary}>
                   <DisplayField value={user?.name} />
                 </h1>
                 <br />
                 {user?.basicInfos?.map(({ text, icon }, idx) => (
                   <div key={idx} className="flex">
-                    <BasicInfoItem text={text} icon={icon} />
+                    <BasicInfoItem text={text} icon={icon} theme={theme} />
                   </div>
                 ))}
               </div>

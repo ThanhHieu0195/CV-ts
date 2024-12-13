@@ -66,7 +66,7 @@ const Item = ({ data }: ItemProps) => {
           </div>
         )}
         {data.heading && (
-          <div className={"text-xl font-bold " + theme.color2}>
+          <div className={"text-xl font-bold " + theme.textColorSecondary}>
             <DisplayField value={data.heading} />
           </div>
         )}

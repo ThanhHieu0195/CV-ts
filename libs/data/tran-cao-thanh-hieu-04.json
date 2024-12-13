@@ -49,8 +49,8 @@
   ],
   "detail": [
     {
-      "heading": "OBJECTIVE",
-      "description": "I am looking for a position as a software developer in the organization where I can utilize\nmy skills at understanding and build software and the opportunity to upgrade my\nknowledge about the new and emerging trends in the sector",
+      "heading": "Self-Introduction",
+      "description": "i am a software engineer with a strong passion for learning and exploring new challenges. Over the years, I have gained experience in various roles, including frontend and backend development, DevOps, mobile application development, and architecture management. I enjoy analyzing projects, proposing practical solutions, and contributing to their successful implementation",
       "icon": "objective"
     }
   ],
@@ -59,13 +59,177 @@
     "heading": "WORK EXPERIENCE",
     "data": [
       {
-        "subheading": "Shift Asia",
-        "time": "03/2021 - now",
-        "isReverse": true,
+        "subheading": "SHIFTINC",
+        "time": "03/2021 - NOW",
         "projects": [
           {
-            "name": "Authentication module",
+            "name": "Sensyn System",
             "metas": [
+              {
+                "title": "Position",
+                "value": "Senior Fullstack Developer"
+              },
+              {
+                "title": "Job description",
+                "display": "array",
+                "value": [
+                  "Build a system to support monitoring, analysis and reporting of construction-related issues (solar panels, elevators, construction sites)",
+
+                  " - Configure, plan flight routes, ... for drones,",
+
+                  " - Using AI to analyze and identify problems from data brought back by drones",
+
+                  " - Display data on Map, create reports, report incidents"
+                ]
+              },
+              {
+                "title": "Platform",
+                "display": "string",
+                "value": [
+                  "VueJs",
+                  "NuxtJs",
+                  "Laravel",
+                  "PHP",
+                  "Redis",
+                  "Azure function",
+                  "Azure service",
+                  "mysql",
+                  "python"
+                ]
+              },
+
+              {
+                "title": null,
+                "display": "link",
+                "value": ["https://www.sensyn-robotics.com/en/"]
+              }
+            ]
+          },
+          {
+            "name": "Jienie System",
+            "metas": [
+              {
+                "title": "Position",
+                "value": "Senior Fullstack Developer"
+              },
+              {
+                "title": "Job description",
+                "display": "array",
+                "value": [
+                  "Building a sales platform that supports business-to-business connections",
+                  " - Provide product search, order and order tracking module",
+                  " - Provides a module that allows producers and suppliers to exchange, negotiate and track the progress of goods.",
+                  " - Provide module to manage catalog mall"
+                ]
+              },
+              {
+                "title": "Platform",
+                "display": "string",
+                "value": [
+                  "VueJs",
+                  "Spring Boot",
+                  "ActiveMQ",
+                  "Kafka",
+                  "Postgres",
+                  "Redis",
+                  "TrinoDB",
+                  "AWS Services (Cloudformation, ECS, ECR, Route53, ALB, Cognito, ...)"
+                ]
+              },
+
+              {
+                "title": null,
+                "display": "link",
+                "value": ["https://jienielab.co.jp/"]
+              }
+            ]
+          },
+          {
+            "name": "Education System",
+            "metas": [
+              {
+                "title": "Position",
+                "value": "Senior Fullstack Developer"
+              },
+              {
+                "title": "Job description",
+                "value": "Building a website system to support users to search for universities with necessary information (Difference score, Competition ratio, Industry, ...)"
+              },
+              {
+                "title": "Platform",
+                "display": "string",
+                "value": [
+                  "NextJs",
+                  "NestJs",
+                  "GraphQL",
+                  "Mysql",
+                  "AWS Services (Cloudformation, ECS, ECR, Route53, ALB, Cognito, ...)"
+                ]
+              },
+
+              {
+                "title": null,
+                "display": "link",
+                "value": ["https://juken.ei-navi.jp/"]
+              }
+            ]
+          },
+          {
+            "name": "Insurance System",
+            "metas": [
+              {
+                "title": "Position",
+                "value": "Senior Fullstack Developer"
+              },
+              {
+                "title": "Job description",
+                "value": "This is a contract management system, insurance, ... Supports the following interaction between users and admin ..."
+              },
+              {
+                "title": "Platform",
+                "display": "string",
+                "value": [
+                  "NextJs/Mui",
+                  "SpringBoot",
+                  "Cognito",
+                  "Postgres",
+                  "Micro Services",
+                  "AWS Workspace"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Internal Banking System",
+            "metas": [
+              {
+                "title": "Position",
+                "value": "Senior Fullstack Developer"
+              },
+              {
+                "title": "Job description",
+                "value": "This is the internal system of a banking system consisting of two parts, admin and user, supporting user management, campaigns, statistics,..."
+              },
+              {
+                "title": "Platform",
+                "display": "string",
+                "value": [
+                  "NextJs/Mui",
+                  "Redis",
+                  " Mysql",
+                  "Spring Boot",
+                  "Multiple workspace"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Authentication Module",
+            "metas": [
+              {
+                "title": "Position",
+                "value": "Senior Fullstack Developer"
+              },
               {
                 "title": "Job description",
                 "value": "Provides authentication module to support registration, login, update information between different platforms."
@@ -84,122 +248,27 @@
                   " Pug"
                 ]
               },
-              { "title": "Position", "value": "Fullstack" },
+
               {
                 "title": null,
                 "display": "link",
                 "value": ["https://www.ei-navi.jp"]
               }
             ]
-          },
-          {
-            "name": "Internal Banking System",
-            "metas": [
-              {
-                "title": "Job description",
-                "value": "This is the internal system of a banking system consisting of two parts, admin and user, supporting user management, campaigns, statistics,..."
-              },
-              {
-                "title": "Platform",
-                "display": "string",
-                "value": [
-                  "NextJs/Mui",
-                  "Redis",
-                  " Mysql",
-                  "Spring Boot",
-                  "Multiple workspace"
-                ]
-              },
-              { "title": "Position", "value": "Fullstack" }
-            ]
-          },
-          {
-            "name": "Insurance System",
-            "metas": [
-              {
-                "title": "Job description",
-                "value": "This is a contract management system, insurance, ... Supports the following interaction between users and admin ..."
-              },
-              {
-                "title": "Platform",
-                "display": "string",
-                "value": [
-                  "NextJs/Mui",
-                  "SpringBoot",
-                  "Cognito",
-                  "Postgres",
-                  "Micro Services",
-                  "AWS Workspace"
-                ]
-              },
-              { "title": "Position", "value": "Fullstack" }
-            ]
-          },
-          {
-            "name": "Pentagon App",
-            "metas": [
-              {
-                "title": "Job description",
-                "value": "An application which helps connect teachers and students"
-              },
-              {
-                "title": "Platform",
-                "display": "string",
-                "value": ["Flutter / Dart"]
-              },
-              { "title": "Position", "value": "Mobile Dev" }
-            ]
-          },
-          {
-            "name": "Juken App",
-            "metas": [
-              {
-                "title": "Job description",
-                "value": "Website helps to find universities"
-              },
-              {
-                "title": "Platform",
-                "display": "string",
-                "value": [
-                  "NextJs",
-                  "NestJs",
-                  "GraphQL",
-                  "AWS Services",
-                  "IaS Cloudformation"
-                ]
-              },
-              { "title": "Position", "value": "Fullstack" },
-              {
-                "title": "Link",
-                "display": "link",
-                "value": ["https://juken.ei-navi.jp/"]
-              }
-            ]
-          },
-          {
-            "name": "Automation test module",
-            "metas": [
-              {
-                "title": "Job description",
-                "value": "Provide test scripts to help test product features and send reports to customers."
-              },
-              {
-                "title": "Platform",
-                "display": "string",
-                "value": ["Java", " Gradle", " Selenium", " Appium", "Selenide"]
-              },
-              { "title": "Position", "value": "Fullstack" }
-            ]
           }
         ]
       },
       {
-        "subheading": "Espx Media",
-        "time": "10/2019 - 03/2021",
+        "subheading": "ESPxMEDIA",
+        "time": "2019 - NOW",
         "projects": [
           {
-            "name": "Streaming media platform",
+            "name": null,
             "metas": [
+              {
+                "title": "Position",
+                "value": "Architecture Manager / Technical Leader"
+              },
               {
                 "title": "Job description",
                 "value": "Provide a live-stream platform that supports B2B and B2C systems with the following features:\n                    - Content management (category, event, movie, stream) \n                    - Actionable with viewers (live chat, q&a, survey, dialog\n                    - Special campaigns (authenticate, ticket, pass-code)\n                    - Statistics, reports\n                    "
@@ -222,54 +291,27 @@
                   " Twilio"
                 ]
               },
-              {
-                "title": "Position",
-                "value": "Technical Lead"
-              },
+
               {
                 "title": "Partner",
                 "display": "string",
                 "value": [
-                  "Mplay Asia",
+                  "MplayAsia",
                   "National Library Board",
-                  "gradian",
+                  "Gradian",
                   "National Gallary Singapore"
                 ]
               },
               {
                 "title": "Link",
                 "display": "link",
-                "value": ["https://www.espx.cloud", "https://mplayasia.com/"]
-              }
-            ]
-          },
-          {
-            "name": "Outsourcing",
-            "metas": [
-              {
-                "title": "Job description",
-                "value": "Provide solutions for customers with micro-sites"
-              },
-              {
-                "title": "Platform",
-                "display": "string",
-                "value": ["Wordpress", "Express", "Mariadb", "WPVIP"]
-              },
-              {
-                "title": "Position",
-                "value": "Technical Lead"
-              },
-              {
-                "title": "Partner",
-                "display": "string",
-                "value": ["Grab", "OCBC", "Facebook"]
-              },
-              {
-                "title": "Link",
-                "display": "link",
                 "value": [
-                  "https://wethinkdigital.fb.com/",
-                  "https://www.facebook.com/business/m/going-global"
+                  "https://switzh.tv/",
+                  "https://www.espxmedia.com/",
+                  "https://www.espx.cloud",
+                  "https://mplayasia.com/",
+                  "https://www.nlb.gov.sg/",
+                  "https://www.nationalgallery.sg/"
                 ]
               }
             ]
@@ -277,12 +319,55 @@
         ]
       },
       {
-        "subheading": "Viral-work",
+        "subheading": "TechVsi",
+        "time": "2019 - 03/2021",
+        "projects": [
+          {
+            "name": null,
+            "metas": [
+              {
+                "title": "Position",
+                "value": "Architecture Manager"
+              },
+              {
+                "title": "Job description",
+                "value": "Provide campaign implementation solutions for partners"
+              },
+              {
+                "title": "Platform",
+                "display": "string",
+                "value": ["WPVIP", "Mariadb", "PHP", "NodeJs"]
+              },
+
+              {
+                "title": "Partner",
+                "display": "string",
+                "value": ["Grab", "OCBC", "Facebook", "Derma RX"]
+              },
+              {
+                "title": "Link",
+                "display": "link",
+                "value": [
+                  "https://wethinkdigital.fb.com/",
+                  "https://www.facebook.com/business/m/going-global",
+                  "https://www.derma-rx.com/"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "subheading": "Viral-Work",
         "time": "07/2018 - 10/2019",
         "projects": [
           {
             "name": "Platform KOL",
             "metas": [
+              {
+                "title": "Position",
+                "value": "Backend developer"
+              },
               {
                 "title": "Job description",
                 "value": "Provide KOL platform which manage influencer and branch to help them can work together\n                  - The platform supports connecting KOL and Brand together\n                  - Crawl data user from facebook\n                  - Manage KOL, BRAND, ADMIN\n                  - Manage campaign\n                    "
@@ -292,15 +377,21 @@
                 "display": "string",
                 "value": ["Express", "Laravel", "Mongodb", "Redis"]
               },
+
               {
-                "title": "Position",
-                "value": "Backend developer"
+                "title": "Link",
+                "display": "link",
+                "value": ["https://viralworks.com/"]
               }
             ]
           },
           {
             "name": "Crawler System",
             "metas": [
+              {
+                "title": "Position",
+                "value": "Backend developer"
+              },
               {
                 "title": "Job description",
                 "value": "Provide crawler support\n                  - Collect post information every day from social networks (facebook, instagram, youtube)\n                  - Crawl user's information\n                  - Screenshot post\n                    "
@@ -316,10 +407,6 @@
                   "Selenium",
                   "Queue"
                 ]
-              },
-              {
-                "title": "Position",
-                "value": "Backend developer"
               }
             ]
           }
@@ -332,6 +419,10 @@
           {
             "name": "Hotel search system",
             "metas": [
+              {
+                "title": "Position",
+                "value": "Backend developer"
+              },
               {
                 "title": "Job description",
                 "value": "- 3rd hotel search system of Japan\n                  - Crawl data from 32 OTA service when search\n                  - Support deep-link\n                  - Minimize latency\n                    "
@@ -349,10 +440,7 @@
                   "Mysql"
                 ]
               },
-              {
-                "title": "Position",
-                "value": "Backend developer"
-              },
+
               {
                 "title": "Link",
                 "display": "link",
@@ -364,6 +452,10 @@
             "name": "Themes in theme-forest",
             "metas": [
               {
+                "title": "Position",
+                "value": "Backend developer"
+              },
+              {
                 "title": "Job description",
                 "value": "Generate themes/plugins to theme-forest\n                  - Build themes, plugins, Short-codes, ...\n                  - Major topics: education, music, hearty, events, ...\n                    "
               },
@@ -371,18 +463,14 @@
                 "title": "Platform",
                 "display": "string",
                 "value": ["CMS Wordpress"]
-              },
-              {
-                "title": "Position",
-                "value": "Backend developer"
               }
             ]
           }
         ]
       },
       {
-        "subheading": "Freelancer",
-        "time": "2015",
+        "subheading": "Outsourcing",
+        "time": "",
         "projects": [
           {
             "name": null,
@@ -391,32 +479,43 @@
                 "title": "Platform",
                 "display": "string",
                 "value": [
-                  "wordpress",
-                  "laravel",
-                  "yii",
-                  "firebase",
-                  "payment gateway integration",
+                  "Wordpress",
+                  "Laravel",
+                  "Yii",
+                  "Firebase",
+                  "Payment gateway integration",
                   "QR code",
-                  "VueJs"
+                  "VueJs",
+                  "Express",
+                  "Mariadb",
+                  "WPVIP"
                 ]
               },
               {
                 "title": "Position",
-                "value": "Fullstack"
+                "value": "Senior Fullstack Developer / Technical Leader"
               },
               {
-                "title": "Product",
+                "title": "Partners",
                 "display": "string",
                 "value": [
-                  "Grab",
-                  "OCBC",
                   "Nhị Long",
                   "Extrim",
                   "Hoàng Anh",
                   "Sabaidee",
                   "Techvsi",
                   "Nhật Quang",
-                  "Nhân Hòa"
+                  "Nhân Hòa",
+                  "Hoàng Tâm"
+                ]
+              },
+              {
+                "title": "Link",
+                "display": "link",
+                "value": [
+                  "https://hoanganh.com.vn/",
+                  "https://extrim.vn/",
+                  "https://techvsi.com/"
                 ]
               }
             ]
@@ -426,3 +525,4 @@
     ]
   }
 }
+
