@@ -104,9 +104,10 @@ const ProfileTemplate4 = ({ user }) => {
                           "NestJs",
                           "Laravel",
                           "Loopback",
+                          "NodeJs",
+                          "Typescript",
                           "Spring Boot",
                           "Flask",
-
                           "Java",
                           "Python",
                           "GraphQL",
@@ -180,6 +181,28 @@ const ProfileTemplate4 = ({ user }) => {
                           "Ionic",
                           "CapacitorJs",
                           "Java",
+                        ],
+                      },
+                      {
+                        groupName: "Tools",
+                        data: [
+                          "Git",
+                          "Github",
+                          "GitLab",
+                          "Github Action",
+                          "Github CI",
+                          "Jenkins",
+                        ],
+                      },
+                      {
+                        groupName: "Automation Test",
+                        data: [
+                          "Wdio",
+                          "Selenium",
+                          "Appium",
+                          "Github Action",
+                          "Github CI",
+                          "Jenkins",
                         ],
                       },
                     ].map((item: any, idx) => (

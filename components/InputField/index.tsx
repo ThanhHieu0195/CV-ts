@@ -51,7 +51,7 @@ const DisplayField = ({
   }
 
   if (variant && variant === "sub-heading") {
-    className += "text-lg font-bold";
+    className += "text-md font-bold";
   }
 
   if (variant && variant === "item") {
@@ -75,7 +75,9 @@ const DisplayField = ({
   }
   return (
     <div className={`${className} ${extraClass}`}>
-      {(isTextField || isAreaField) && <span>{value}</span>}
+      {(isTextField || isAreaField) && (
+        <span dangerouslySetInnerHTML={{ __html: value }}></span>
+      )}
       {isIconField && <Icon type={value as IconType} filled={filled} />}
       {isLink && <a href={link ?? value}>{value}</a>}
     </div>
@@ -83,3 +85,4 @@ const DisplayField = ({
 };
 
 export default DisplayField;
+

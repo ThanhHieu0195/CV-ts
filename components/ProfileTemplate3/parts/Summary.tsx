@@ -39,14 +39,18 @@ const Summary = ({ user, theme }: SummaryProps) => {
           {user?.metaInfos?.map((item, idx) => (
             <>
               <DisplayField
-                variant="heading"
+                variant={item.display ? item.display : "sub-heading"}
                 value={item.heading.toUpperCase()}
               />
               <HSpace variant="base" />
 
               <div key={idx} className="mb-2  flex flex-col gap-1">
                 {item.infos.map((item2, idx) => (
-                  <RowItem key={idx} text={item2} theme={theme} />
+                  <RowItem
+                    key={idx}
+                    text={Array.isArray(item2) ? item2.join(", ") : item2}
+                    theme={theme}
+                  />
                 ))}
               </div>
             </>
@@ -58,3 +62,4 @@ const Summary = ({ user, theme }: SummaryProps) => {
 };
 
 export default Summary;
+

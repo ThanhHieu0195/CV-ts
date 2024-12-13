@@ -13,38 +13,77 @@
   ],
   "metaInfos": [
     {
-      "heading": "SKILLS",
+      "heading": "TECH STACK",
+      "display": "heading",
+      "infos": []
+    },
+    {
+      "heading": "Frontend",
       "infos": [
-        "NodeJs, Typescript, FeathersJs, ExpressJs",
-        "NextJs, ReactJS",
-        "Flutter, Dart",
-        "Spring Boot",
-        "Python, Flask, Django",
-        "Wordpress, Yii, Laravel",
-        "MySql, Mongodb, PostgreSql",
-        "Redis, ElasticSearch",
-        "Git, SVN, Apache2, Nginx, Ubuntu",
-        "Docker, SSH, BASH script",
-        "Digital Ocean, AWS, Sendgrid, Twilio, Firebase",
-        "Cognito, DynamoDB, EC2, Route 53, Lambda",
-        "Bunny, cloudflare, CloudFront",
-        "Gulp, Webpack, CICD",
-        "Automation Test (Wdio, Selenium, Appium)",
-        "Tailwind Css",
-        "GraphQL",
-        "Ruby"
+        ["NextJs", "ReatJs"],
+        ["NuxtJs", "VueJs"],
+        "AngularJs",
+        ["Material UI", "Antd", "Element UI", "Vuetify"],
+        "Tailwindcss",
+        ["Gulp", "ViteJs", "Webpack"],
+        ["Wdio", "Jest"]
       ]
     },
     {
-      "heading": "INTERESTS",
+      "heading": "Backend",
       "infos": [
-        "Read News",
-        "Learn Technology",
-        "Listen Music",
-        "Listen To Share Experience",
-        "Watch Anime",
-        "Like travel"
+        ["FeathersJs", "ExpressJs", "NestJs", "Loopback", "NodeJs"],
+        "Typescript",
+        ["Spring Boot", "Java"],
+        ["Flask", "Python", "Django"],
+        "GraphQL",
+        "SocketIO",
+        ["Wordpress", "Yii", "Laravel", "PHP"],
+        "Flutter",
+        "Ruby",
+        "Golang"
       ]
+    },
+    {
+      "heading": "Database",
+      "infos": [
+        ["Postgres", "Mysql", "MongoDB", "Redis", "ElasticSearch", "DynamoDB"]
+      ]
+    },
+    {
+      "heading": "Devop / Tools",
+      "infos": [
+        ["Azure Service", "Azure Function"],
+        "Digital Ocean",
+        [
+          "AWS (Cloudformation, Cognito, EC2, SES, Route53, Securty, ALB , ERC, ECS)"
+        ],
+
+        ["Terraform", "Docker", "PM2", "Nginx", "Bash", "doctl", "Linux"],
+        ["Ubuntu", "Centos"],
+        ["Redis Search", "ActiveMQ", "Kafka", "TrinoDB"],
+        ["Github", "GitLab"],
+        ["Github Action", "Github CI", "Jenkins"],
+        "Git"
+      ]
+    },
+    {
+      "heading": "Service",
+      "infos": [
+        ["Twilio", "Firebase", "Sendgrid", "AWS"],
+        "CDN services </br>(Bunny, CloudFront, Cloudflare, ...)",
+        ["Payment Gateway </br> (Paypal, Momo, Ngan Luong, ...)"],
+        ["Digital Ocean", "Azure"]
+      ]
+    },
+    {
+      "heading": "Mobile",
+      "infos": [["Flutter", "React native", "Ionic", "CapacitorJs", "Java"]]
+    },
+
+    {
+      "heading": "Automation Test",
+      "infos": [["Wdio", "Selenium", "Appium", "Jest", "E2E"]]
     }
   ],
   "detail": [
